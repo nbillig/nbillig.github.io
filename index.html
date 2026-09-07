@@ -391,8 +391,10 @@
   <div class="hero-content">
     <h1>Nathaniel Billig</h1>
     <p>
-      Graduate student and engineer working in robotics, embedded systems,
-      controls, and mechanical/electrical design.
+      I am an electrical engineering graduate student at the University of Wyoming, where I also earned my B.S. in Computer Engineering. My primary interests are embedded systems, sensor integration, and CAD, with a broader interest in robotics and the development of electromechanical systems.
+As part of my graduate research, I have spent the past few years working on a USSF sponsored project focused on the design and development of an underactuated robotic gripper for non-cooperative objects. Working on the project from the initial concepts and prototypes through continued development has given me experience across mechanical design, embedded programming, sensor selection and integration, electronics, and experimental testing.
+I particularly enjoy hands-on projects that combine these areas, especially designing a system in CAD, developing the embedded software and electronics needed to operate it, and integrating sensors to make the system work reliably. I am especially interested in opportunities involving aerospace and space robotics, while also being interested in medical robotics and other applications of intelligent robotic systems.
+
     </p>
     <div class="links">
       <a href="YOUR_RESUME_URL.pdf">Resume</a>
@@ -412,10 +414,7 @@
     <div class="project">
       <h3>Soft Adaptive Robotic Gripper</h3>
       <p>
-        Designed and built a tendon-driven soft robotic gripper for grasping
-        non-cooperative objects. Work included mechanical CAD, schematic and PCB design, embedded control, sensor selection and integration, simulation, and
-        experimental testing.
-      </p>
+        Designed and developed a tendon-driven, underactuated robotic gripper for grasping objects in challenging and remote environments. Developed the mechanical system from the initial concept through multiple design iterations, including finger geometry, flexure joints, tendon actuation, and integrated mechanical components. Designed the three-finger architecture with independent motor actuation and underactuated joints to accommodate small errors in object pose during grasping.
       <div class="tags">CAD · PCB Design · Embedded Systems · Sensor Integration · Robotics · Kinematic/Dynamic Modeling · Simulation</div>
       
       <div class="image-carousel">
@@ -450,9 +449,7 @@
     <div class="project">
       <h3>Hall-Effect Sensor Live Integration</h3>
       <p>
-        Integrated Hall-effect sensors into robotic joints to measure joint
-        position in real time. Developed the electronics, data acquisition,
-        calibration, and live sensor-to-angle mapping.
+        Designed and integrated a Hall-effect sensing system for real-time finger joint-angle feedback. Developed the sensor and magnet configuration, integrated the components directly into the mechanical joints, and designed custom PCB electronics and embedded software for data acquisition. Iterated on sensor placement and mechanical packaging to achieve usable and repeatable measurements within the limited space of the gripper.
       </p>
       <div class="tags">ESP32 · Hall Sensors · Calibration · Real-Time Data</div>
       
@@ -483,9 +480,7 @@
     <div class="project">
       <h3>Contact Force Simulation</h3>
       <p>
-        Implemented a MATLAB Simscape simulation of tendon-driven finger mechanics and contact
-        forces to investigate how actuator tension produces forces at the
-        grasping surface.
+        Developed a simulation model to reproduce the observed kinematic behavior of the physical gripper and evaluate its motion during grasping. The model was used to compare simulated and experimental joint movements while estimating contact forces at the finger contact pads based on the simulated configuration.
       </p>
       <div class="tags">MATLAB · Simscape · Robotics · Contact Modeling</div>
       <div class="image-carousel">
@@ -511,9 +506,7 @@
     <div class="project">
       <h3>Digital Twin Recreation</h3>
       <p>
-        Recreated the physical gripper as a digital model and connected
-        measured sensor data to the simulated system for comparison between
-        physical and simulated behavior.
+Recreated the physical gripper as a digital model to represent its mechanical structure and motion in simulation. Developed the digital representation to support visualization, system analysis, and comparison between the physical prototype and its simulated behavior.
       </p>
       <div class="tags">MATLAB · Simscape · Robotics · System Modeling</div>
       <div style="margin-top: 18px; border: 1px solid #cbd5e1; background: #f8fafc; padding: 15px; border-radius: 6px; text-align: center;">
@@ -556,7 +549,7 @@
     <div class="project">
       <h3>Cobot Path Planning</h3>
       <p>
-        Developed a path planning algorithm for a collaborative robot and
+        Developed a path planning algorithm for a drone swarm and
         evaluated the resulting motion through simulation.
       </p>
       <div class="tags">Robotics · Path Planning · Simulation</div>
