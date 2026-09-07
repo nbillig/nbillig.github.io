@@ -11,17 +11,18 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      background: #fff;
+      color: #334155;
+      background: #f0f4f8; /* Cool, crisp slate-tinted off-white background */
       line-height: 1.6;
     }
 
-    a { color: #245b8f; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a { color: #475569; text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: #0f172a; text-decoration: underline; }
 
     header {
-      border-bottom: 1px solid #ddd;
-      background: #fff;
+      border-bottom: 1px solid #cbd5e1;
+      background: rgba(240, 244, 248, 0.95);
+      backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 999;
@@ -38,22 +39,29 @@
 
     .name {
       font-weight: 700;
-      color: #222;
+      color: #0f172a;
+      font-size: 18px;
     }
 
     nav a {
       margin-left: 24px;
-      color: #444;
+      color: #64748b;
       font-size: 15px;
     }
+    nav a:hover {
+      color: #0f172a;
+    }
 
-    /* Hero / Header layout with space for an enlarged profile picture on the right */
+    /* Hero Section with a distinct cool slate/teal-tinted accent panel */
     .hero {
       max-width: 1050px;
-      margin: auto;
-      padding: 70px 25px 60px;
+      margin: 30px auto;
+      padding: 60px 40px;
+      background: #e2e8f0; /* Cool slate contrast block */
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
       display: grid;
-      grid-template-columns: 1fr 360px;
+      grid-template-columns: 1fr 340px;
       gap: 50px;
       align-items: center;
     }
@@ -62,10 +70,11 @@
       font-size: 42px;
       margin: 0 0 10px;
       font-weight: 700;
+      color: #0f172a;
     }
 
     .hero-content p {
-      color: #555;
+      color: #475569;
       font-size: 19px;
       margin: 0 0 25px;
     }
@@ -73,19 +82,29 @@
     .links a {
       margin-right: 18px;
       font-size: 15px;
+      color: #334155;
+      background: #f8fafc;
+      padding: 6px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+    }
+    .links a:hover {
+      background: #cbd5e1;
+      color: #0f172a;
+      text-decoration: none;
     }
 
     .hero-pic-container {
       width: 100%;
       aspect-ratio: 1;
-      border: 1px solid #ddd;
+      border: 1px solid #cbd5e1;
       border-radius: 6px;
-      background: #f5f5f5;
+      background: #f8fafc;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .hero-pic-container img {
@@ -101,23 +120,31 @@
     }
 
     section {
-      padding: 55px 0;
-      border-top: 1px solid #e5e5e5;
+      padding: 50px 35px;
+      margin: 30px 0;
+      background: #ffffff; /* Clean white card layout */
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.01);
     }
 
     h2 {
       font-size: 27px;
       margin: 0 0 28px;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
     }
 
     h3 {
       margin: 0 0 8px;
       font-size: 21px;
+      color: #1e293b;
     }
 
     .project {
       padding: 25px 0;
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .project:last-child {
@@ -125,31 +152,43 @@
     }
 
     .project p {
-      color: #555;
+      color: #475569;
       max-width: 800px;
       margin: 7px 0 12px;
     }
 
     .tags {
       font-size: 13px;
-      color: #666;
+      color: #475569;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
     }
 
     .skills {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 20px;
     }
 
-    /* Carousel & Thumbnails Styles - Slightly bigger figure display */
+    .skill-group {
+      background: #f8fafc; /* Cool subtle tint for skill cards */
+      padding: 18px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+    }
+
+    /* Carousel & Thumbnails Styles */
     .image-carousel {
       position: relative;
       margin-top: 18px;
       max-width: 100%;
-      border: 1px solid #ddd;
-      background: #f9f9f9;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
       padding: 15px;
-      border-radius: 4px;
+      border-radius: 6px;
       text-align: center;
     }
 
@@ -178,7 +217,7 @@
     }
 
     .project-image:hover, .project-video:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       transform: scale(1.01);
     }
 
@@ -191,22 +230,24 @@
     }
 
     .carousel-btn {
-      background: #245b8f;
+      background: #475569;
       color: #fff;
       border: none;
       padding: 6px 12px;
       cursor: pointer;
       font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
       border-radius: 3px;
+      transition: background 0.2s ease;
     }
 
     .carousel-btn:hover {
-      background: #1a446c;
+      background: #334155;
     }
 
     .carousel-counter {
       font-size: 13px;
-      color: #666;
+      color: #64748b;
     }
 
     /* Thumbnail Strip Styles */
@@ -216,7 +257,7 @@
       overflow-x: auto;
       justify-content: center;
       padding-top: 8px;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid #cbd5e1;
     }
 
     .thumb-img, .thumb-video-placeholder {
@@ -231,7 +272,7 @@
     }
 
     .thumb-video-placeholder {
-      background: #333;
+      background: #475569;
       color: #fff;
       display: flex;
       align-items: center;
@@ -246,27 +287,31 @@
     }
 
     .thumb-img.active-thumb, .thumb-video-placeholder.active-thumb {
-      border-color: #245b8f;
+      border-color: #475569;
       opacity: 1;
     }
 
     .skill-group h3 {
       font-size: 17px;
       margin-bottom: 5px;
+      color: #1e293b;
     }
 
     .skill-group p {
-      color: #555;
+      color: #475569;
       margin: 0;
     }
 
     footer {
       max-width: 1050px;
-      margin: auto;
-      padding: 35px 25px;
-      color: #777;
+      margin: 40px auto 25px;
+      padding: 25px;
+      color: #64748b;
       font-size: 13px;
-      border-top: 1px solid #e5e5e5;
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
     }
 
     /* Lightbox Modal Overlay Styles */
@@ -278,7 +323,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(15, 23, 42, 0.8);
       align-items: center;
       justify-content: center;
       padding: 20px;
@@ -291,7 +336,7 @@
       border-radius: 4px;
       text-align: center;
       position: relative;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
     #lightbox-content img, #lightbox-content video {
       max-width: 100%;
@@ -306,21 +351,22 @@
       right: 15px;
       font-size: 28px;
       font-weight: bold;
-      color: #333;
+      color: #64748b;
       cursor: pointer;
     }
     #lightbox-close:hover {
-      color: #000;
+      color: #0f172a;
     }
 
     @media (max-width: 800px) {
-      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 40px; }
+      .hero { grid-template-columns: 1fr; text-align: center; margin: 15px; padding: 40px 20px; }
       .hero-pic-container { max-width: 240px; margin: 20px auto 0; }
       .hero h1 { font-size: 34px; }
       .nav { display: block; }
       nav { margin-top: 10px; }
       nav a { margin: 0 18px 0 0; }
       .skills { grid-template-columns: 1fr; }
+      section { padding: 30px 20px; margin: 15px; }
     }
   </style>
 </head>
@@ -467,7 +513,7 @@
         physical and simulated behavior.
       </p>
       <div class="tags">MATLAB · Simscape · Robotics · System Modeling</div>
-      <div style="margin-top: 18px; border: 1px solid #ddd; background: #f9f9f9; padding: 15px; border-radius: 4px; text-align: center;">
+      <div style="margin-top: 18px; border: 1px solid #cbd5e1; background: #f8fafc; padding: 15px; border-radius: 6px; text-align: center;">
         <video class="project-video active" controls autoplay muted loop style="display: block; max-height: 600px; margin: 0 auto;">
           <source src="Images/DigitalTwinTest.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -511,7 +557,7 @@
         evaluated the resulting motion through simulation.
       </p>
       <div class="tags">Robotics · Path Planning · Simulation</div>
-      <div style="margin-top: 18px; border: 1px solid #ddd; background: #f9f9f9; padding: 15px; border-radius: 4px; text-align: center;">
+      <div style="margin-top: 18px; border: 1px solid #cbd5e1; background: #f8fafc; padding: 15px; border-radius: 6px; text-align: center;">
         <video class="project-video active" controls autoplay muted loop style="display: block; max-height: 600px; margin: 0 auto;">
           <source src="Images/flock.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -549,7 +595,7 @@
         to a supporting surface, with emphasis on gripper design, sensing,
         simulation, and experimental evaluation.
       </p>
-      <p style="font-size: 14px; font-weight: bold; color: #245b8f; margin: 5px 0 8px;">Upcoming at IEEE SMC 2026</p>
+      <p style="font-size: 14px; font-weight: bold; color: #475569; margin: 5px 0 8px;">Upcoming at IEEE SMC 2026</p>
     </div>
   </section>
 
