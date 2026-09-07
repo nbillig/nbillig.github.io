@@ -464,4 +464,201 @@
       <h3>Multi-Agent Continuum Arm Q-Learning</h3>
       <p>
         Implemented a multi-agent reinforcement learning approach for
-        coordinated control of a continuum arm. The project explored
+        coordinated control of a continuum arm. The project explored state
+        discretization, Q-learning, and coordinated actuator behavior.
+      </p>
+      <div class="tags">Python · Q-Learning · Reinforcement Learning · Robotics</div>
+      <div class="image-carousel">
+        <div class="carousel-track">
+          <img class="project-image active" src="Images/FullyLearned.gif" alt="Fully Learned State">
+          <img class="project-image" src="Images/PartiallyLearned.gif" alt="Partially Learned Q-Table">
+          <img class="project-image" src="Images/FirstEpisode.gif" alt="First Episode">
+          <img class="project-image" src="Images/JointActionIndependentState.png" alt="Joint Action Independent States">
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn prev-btn">&#10094; Prev</button>
+          <span class="carousel-counter">1 / 4</span>
+          <button class="carousel-btn next-btn">Next &#10095;</button>
+        </div>
+        <div class="thumbnail-strip">
+          <img class="thumb-img active-thumb" src="Images/FullyLearned.gif" alt="Thumbnail 1" data-index="0">
+          <img class="thumb-img" src="Images/PartiallyLearned.gif" alt="Thumbnail 2" data-index="1">
+          <img class="thumb-img" src="Images/FirstEpisode.gif" alt="Thumbnail 3" data-index="2">
+          <img class="thumb-img" src="Images/JointActionIndependentState.png" alt="Thumbnail 4" data-index="3">
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Cobot Path Planning</h3>
+      <p>
+        Developed a path planning algorithm for a collaborative robot and
+        evaluated the resulting motion through simulation.
+      </p>
+      <div class="tags">Robotics · Path Planning · Simulation</div>
+      <div style="margin-top: 18px; border: 1px solid #ddd; background: #f9f9f9; padding: 15px; border-radius: 4px; text-align: center;">
+        <video class="project-video active" controls autoplay muted loop style="display: block;">
+          <source src="Images/flock.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>SNAD — Tripping Hazard Detection</h3>
+      <p>
+        Senior design project using a Raspberry Pi 4 and camera to provide
+        real-time computer vision assistance. A convolutional neural network
+        classified whether a scene contained a potential tripping hazard and
+        alerted the user when one was detected.
+      </p>
+      <div class="tags">Raspberry Pi 4 · CNN · Computer Vision · Python · Embedded Systems</div>
+      <div style="margin-top: 18px; border: 1px solid #ddd; background: #f9f9f9; padding: 15px; border-radius: 4px; text-align: center;">
+        <img class="project-image active" src="Images/SNAD_Poster-1.pdf" alt="Poster Description of the project" style="display: block;">
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="project">
+      <h3>Underactuated Robotic Grippers for Non-Cooperative Object Grasping</h3>
+      <p>
+        Research focused on adaptive grasping for objects that are not fixed
+        to a supporting surface, with emphasis on gripper design, sensing,
+        simulation, and experimental evaluation.
+      </p>
+      <a href="YOUR_PAPER_LINK">Paper / Publication</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Robotics</h3>
+        <p>Robot arms, grippers, actuators, sensors, path planning</p>
+      </div>
+      <div class="skill-group">
+        <h3>Embedded</h3>
+        <p>ESP32, Raspberry Pi, microcontrollers, serial communication</p>
+      </div>
+      <div class="skill-group">
+        <h3>Design</h3>
+        <p>CAD, PCB design, electrical schematics, mechanical design</p>
+      </div>
+      <div class="skill-group">
+        <h3>Simulation</h3>
+        <p>MATLAB, Simscape, system modeling, digital twins</p>
+      </div>
+      <div class="skill-group">
+        <h3>Programming</h3>
+        <p>C/C++, Python, MATLAB</p>
+      </div>
+      <div class="skill-group">
+        <h3>Machine Learning</h3>
+        <p>Q-learning, CNNs, computer vision</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      I am interested in opportunities involving robotics, embedded systems,
+      controls, and medical or intelligent robotic systems.
+    </p>
+    <p>
+      <a href="mailto:Nathaniel.L.Billig@gmail.com">Nathaniel.L.Billig@gmail.com</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 Nathaniel Billig
+</footer>
+
+<div id="lightbox-modal">
+  <div id="lightbox-content">
+    <span id="lightbox-close">&times;</span>
+    <div id="lightbox-body"></div>
+  </div>
+</div>
+
+<script>
+  // Carousel and Thumbnails functionality
+  document.querySelectorAll('.image-carousel').forEach(carousel => {
+    const items = carousel.querySelectorAll('.project-image, .project-video');
+    const thumbnails = carousel.querySelectorAll('.thumb-img, .thumb-video-placeholder');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+    const counter = carousel.querySelector('.carousel-counter');
+    let currentIndex = 0;
+
+    function showItem(index) {
+      currentIndex = index;
+      items.forEach((item, idx) => {
+        item.classList.toggle('active', idx === currentIndex);
+        if (item.tagName === 'VIDEO' && idx !== currentIndex) {
+          item.pause();
+        }
+      });
+      thumbnails.forEach((thumb, idx) => {
+        thumb.classList.toggle('active-thumb', idx === currentIndex);
+      });
+      counter.textContent = `${currentIndex + 1} / ${items.length}`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      let newIndex = (currentIndex - 1 + items.length) % items.length;
+      showItem(newIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      let newIndex = (currentIndex + 1) % items.length;
+      showItem(newIndex);
+    });
+
+    thumbnails.forEach((thumb, idx) => {
+      thumb.addEventListener('click', () => {
+        showItem(idx);
+      });
+    });
+  });
+
+  // Lightbox functionality
+  const modal = document.getElementById('lightbox-modal');
+  const modalBody = document.getElementById('lightbox-body');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.project-image').forEach(img => {
+    img.addEventListener('click', () => {
+      modalBody.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+      modal.style.display = 'flex';
+    });
+  });
+
+  document.querySelectorAll('.project-video').forEach(video => {
+    video.addEventListener('click', () => {
+      const sourceSrc = video.querySelector('source') ? video.querySelector('source').src : video.src;
+      modalBody.innerHTML = `<video src="${sourceSrc}" controls autoplay></video>`;
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    const modalVideo = modalBody.querySelector('video');
+    if (modalVideo) modalVideo.pause();
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      const modalVideo = modalBody.querySelector('video');
+      if (modalVideo) modalVideo.pause();
+    }
+  });
+</script>
+</body>
+</html>
