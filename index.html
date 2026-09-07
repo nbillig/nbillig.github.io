@@ -52,18 +52,19 @@
       color: #0f172a;
     }
 
-    /* Hero Section with a distinct cool slate/teal-tinted accent panel */
+    /* Hero Section with Project Block Background and Skill-Matched Buttons */
     .hero {
       max-width: 1050px;
       margin: 30px auto;
       padding: 60px 40px;
-      background: #e2e8f0; /* Cool slate contrast block */
+      background: #ffffff; /* Matches project blocks */
       border: 1px solid #cbd5e1;
       border-radius: 8px;
       display: grid;
       grid-template-columns: 1fr 340px;
       gap: 50px;
       align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.01);
     }
 
     .hero-content h1 {
@@ -83,13 +84,15 @@
       margin-right: 18px;
       font-size: 15px;
       color: #334155;
-      background: #f8fafc;
+      background: #f8fafc; /* Matches skill-group background */
+      border: 1px solid #e2e8f0; /* Matches skill-group border */
       padding: 6px 12px;
-      border: 1px solid #cbd5e1;
       border-radius: 4px;
+      transition: background 0.2s ease, border-color 0.2s ease;
     }
     .links a:hover {
-      background: #cbd5e1;
+      background: #e2e8f0;
+      border-color: #cbd5e1;
       color: #0f172a;
       text-decoration: none;
     }
