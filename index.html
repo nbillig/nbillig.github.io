@@ -47,20 +47,24 @@
       font-size: 15px;
     }
 
+    /* Hero / Header layout with space for a large picture on the right */
     .hero {
       max-width: 1050px;
       margin: auto;
-      padding: 85px 25px 70px;
+      padding: 70px 25px 60px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 50px;
+      align-items: center;
     }
 
-    .hero h1 {
+    .hero-content h1 {
       font-size: 42px;
       margin: 0 0 10px;
       font-weight: 700;
     }
 
-    .hero p {
-      max-width: 650px;
+    .hero-content p {
       color: #555;
       font-size: 19px;
       margin: 0 0 25px;
@@ -69,6 +73,25 @@
     .links a {
       margin-right: 18px;
       font-size: 15px;
+    }
+
+    .hero-pic-container {
+      width: 100%;
+      aspect-ratio: 1;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .hero-pic-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     main {
@@ -90,32 +113,6 @@
     h3 {
       margin: 0 0 8px;
       font-size: 21px;
-    }
-
-    /* About Section Styles */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .profile-pic-container {
-      width: 100%;
-      aspect-ratio: 1;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      background: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .profile-pic-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     .project {
@@ -168,7 +165,7 @@
       max-height: 480px;
       width: auto;
       height: auto;
-      object-fit: contain; /* Fixes size mismatch across GIFs and PNGs */
+      object-fit: contain;
       display: none;
       margin: 0 auto;
       cursor: pointer;
@@ -316,14 +313,14 @@
       color: #000;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 40px; }
+      .hero-pic-container { max-width: 240px; margin: 20px auto 0; }
       .hero h1 { font-size: 34px; }
       .nav { display: block; }
       nav { margin-top: 10px; }
       nav a { margin: 0 18px 0 0; }
       .skills { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; text-align: center; }
-      .profile-pic-container { max-width: 200px; margin: 0 auto; }
     }
   </style>
 </head>
@@ -333,7 +330,6 @@
   <div class="nav">
     <div class="name">Nathaniel Billig</div>
     <nav>
-      <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#research">Research</a>
       <a href="#skills">Skills</a>
@@ -343,36 +339,25 @@
 </header>
 
 <div class="hero">
-  <h1>Nathaniel Billig</h1>
-  <p>
-    Graduate student and engineer working in robotics, embedded systems,
-    controls, and mechanical/electrical design.
-  </p>
-  <div class="links">
-    <a href="YOUR_RESUME_URL.pdf">Resume</a>
-    <a href="https://github.com/nbillig">GitHub</a>
-    <a href="https://www.linkedin.com/in/nathaniel-billig-73a5a1299/">LinkedIn</a>
+  <div class="hero-content">
+    <h1>Nathaniel Billig</h1>
+    <p>
+      Graduate student and engineer working in robotics, embedded systems,
+      controls, and mechanical/electrical design.
+    </p>
+    <div class="links">
+      <a href="YOUR_RESUME_URL.pdf">Resume</a>
+      <a href="https://github.com/nbillig">GitHub</a>
+      <a href="https://www.linkedin.com/in/nathaniel-billig-73a5a1299/">LinkedIn</a>
+    </div>
+  </div>
+  <div class="hero-pic-container">
+    <!-- Replace src with your profile picture path -->
+    <img src="Images/ProfilePic.jpg" alt="Nathaniel Billig">
   </div>
 </div>
 
 <main>
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-grid">
-      <div class="profile-pic-container">
-        <img src="Images/ProfilePic.jpg" alt="Nathaniel Billig">
-      </div>
-      <div>
-        <p style="margin-top: 0; color: #555; font-size: 17px;">
-          I am a passionate graduate engineering student specializing in hardware-software integration, automated systems, and intelligent robotics. My background spans hands-on mechanical and PCB design down to low-level microcontroller programming and machine learning applications.
-        </p>
-        <p style="color: #555; font-size: 17px;">
-          Whether building soft underactuated grippers, designing real-time sensor loops, or validating physical models via digital twins, I enjoy tackling complex multidisciplinary challenges from concept to functional realization.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <section id="projects">
     <h2>Projects</h2>
 
@@ -542,8 +527,15 @@
         alerted the user when one was detected.
       </p>
       <div class="tags">Raspberry Pi 4 · CNN · Computer Vision · Python · Embedded Systems</div>
-      <div style="margin-top: 18px; border: 1px solid #ddd; background: #f9f9f9; padding: 15px; border-radius: 4px; text-align: center;">
-        <img class="project-image active" src="Images/SNAD_Poster-1.png" alt="SNAD Project Poster" style="display: block; margin: 0 auto;">
+      
+      <!-- Fixed SNAD Poster using carousel structure to ensure correct rendering and lightbox behavior -->
+      <div class="image-carousel">
+        <div class="carousel-track">
+          <img class="project-image active" src="Images/SNAD_Poster-1.png" alt="SNAD Project Poster">
+        </div>
+        <div class="thumbnail-strip">
+          <img class="thumb-img active-thumb" src="Images/SNAD_Poster-1.png" alt="Thumbnail 1" data-index="0">
+        </div>
       </div>
     </div>
   </section>
@@ -635,18 +627,22 @@
       thumbnails.forEach((thumb, idx) => {
         thumb.classList.toggle('active-thumb', idx === currentIndex);
       });
-      counter.textContent = `${currentIndex + 1} / ${items.length}`;
+      if (counter) {
+        counter.textContent = `${currentIndex + 1} / ${items.length}`;
+      }
     }
 
-    prevBtn.addEventListener('click', () => {
-      let newIndex = (currentIndex - 1 + items.length) % items.length;
-      showItem(newIndex);
-    });
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => {
+        let newIndex = (currentIndex - 1 + items.length) % items.length;
+        showItem(newIndex);
+      });
 
-    nextBtn.addEventListener('click', () => {
-      let newIndex = (currentIndex + 1) % items.length;
-      showItem(newIndex);
-    });
+      nextBtn.addEventListener('click', () => {
+        let newIndex = (currentIndex + 1) % items.length;
+        showItem(newIndex);
+      });
+    }
 
     thumbnails.forEach((thumb, idx) => {
       thumb.addEventListener('click', () => {
