@@ -134,18 +134,71 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
+
+    /* Carousel Styles for Rotating Images */
+    .image-carousel {
+      position: relative;
+      margin-top: 18px;
+      max-width: 100%;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .carousel-track {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 250px;
+    }
+
     .project-image {
       max-width: 100%;
+      max-height: 350px;
       height: auto;
-      display: block;
-      margin-top: 18px;
+      display: none;
+      margin: 0 auto;
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
+    .project-image.active {
+      display: block;
+    }
+
     .project-image:hover {
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transform: translateY(-2px);
+      transform: scale(1.01);
     }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .carousel-btn {
+      background: #245b8f;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 3px;
+    }
+
+    .carousel-btn:hover {
+      background: #1a446c;
+    }
+
+    .carousel-counter {
+      font-size: 13px;
+      color: #666;
+    }
+
     .skill-group h3 {
       font-size: 17px;
       margin-bottom: 5px;
@@ -257,13 +310,24 @@
         experimental testing.
       </p>
       <div class="tags">CAD · PCB Design · Embedded Systems · Sensor Integration · Robotics · Kinematic/Dynamic Modeling · Simulation</div>
-      <img class="project-image" src="Images/SingleFingerAssembly.png" alt="CAD model of the a single finger of the adaptive gripper">
-      <img class="project-image" src="Images/D24Schem.png" alt="Schematic 1">
-      <img class="project-image" src="Images/DRVschem.png" alt="Schematic 2">
-      <img class="project-image" src="Images/HXSchem.png" alt="Schematic 3">
-      <img class="project-image" src="Images/MuxSchem.png" alt="Schematic 4">
-      <img class="project-image" src="Images/mainSchem.png" alt="Schematic 5">
-      <img class="project-image" src="Images/PCB.png" alt="Gripper PCB">
+      
+      <!-- Carousel Container for Multiple Images -->
+      <div class="image-carousel">
+        <div class="carousel-track">
+          <img class="project-image active" src="Images/SingleFingerAssembly.png" alt="CAD model of a single finger of the adaptive gripper">
+          <img class="project-image" src="Images/D24Schem.png" alt="Schematic 1">
+          <img class="project-image" src="Images/DRVschem.png" alt="Schematic 2">
+          <img class="project-image" src="Images/HXSchem.png" alt="Schematic 3">
+          <img class="project-image" src="Images/MuxSchem.png" alt="Schematic 4">
+          <img class="project-image" src="Images/mainSchem.png" alt="Schematic 5">
+          <img class="project-image" src="Images/PCB.png" alt="Gripper PCB">
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn prev-btn">&#10094; Prev</button>
+          <span class="carousel-counter">1 / 7</span>
+          <button class="carousel-btn next-btn">Next &#10095;</button>
+        </div>
+      </div>
     </div>
 
     <div class="project">
@@ -401,6 +465,33 @@
 </div>
 
 <script>
+  // Carousel functionality
+  document.querySelectorAll('.image-carousel').forEach(carousel => {
+    const images = carousel.querySelectorAll('.project-image');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+    const counter = carousel.querySelector('.carousel-counter');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      images.forEach((img, idx) => {
+        img.classList.toggle('active', idx === currentIndex);
+      });
+      counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    });
+  });
+
+  // Lightbox functionality
   const modal = document.getElementById('lightbox-modal');
   const modalBody = document.getElementById('lightbox-body');
   const closeBtn = document.getElementById('lightbox-close');
