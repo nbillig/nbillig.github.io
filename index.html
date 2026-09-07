@@ -151,16 +151,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 250px;
+      min-height: 300px;
     }
 
+    /* Made images/videos slightly bigger in their boxes */
     .project-image, .project-video {
       max-width: 100%;
-      max-height: 350px;
+      max-height: 480px;
+      width: auto;
       height: auto;
       display: none;
       margin: 0 auto;
       cursor: pointer;
+      border-radius: 4px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -177,7 +180,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 10px;
+      margin-top: 12px;
       margin-bottom: 12px;
     }
 
@@ -211,8 +214,8 @@
     }
 
     .thumb-img, .thumb-video-placeholder {
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       object-fit: cover;
       cursor: pointer;
       border: 2px solid transparent;
@@ -286,7 +289,7 @@
     }
     #lightbox-content img, #lightbox-content video {
       max-width: 100%;
-      max-height: 75vh;
+      max-height: 80vh;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -353,7 +356,6 @@
       </p>
       <div class="tags">CAD · PCB Design · Embedded Systems · Sensor Integration · Robotics · Kinematic/Dynamic Modeling · Simulation</div>
       
-      <!-- Carousel Container with Thumbnails -->
       <div class="image-carousel">
         <div class="carousel-track">
           <img class="project-image active" src="Images/SingleFingerAssembly.png" alt="CAD model of a single finger of the adaptive gripper">
@@ -390,14 +392,10 @@
       </p>
       <div class="tags">ESP32 · Hall Sensors · Calibration · Real-Time Data</div>
       
-      <!-- Carousel Container with Video and Thumbnails -->
       <div class="image-carousel">
         <div class="carousel-track">
-          <!-- Video element with multi-source fallback support -->
           <video class="project-video active" controls autoplay muted loop>
             <source src="Images/HE_Proto_demo.mp4" type="video/mp4">
-            <!-- If you have a WebM version, you can add it here as a fallback: -->
-            <!-- <source src="Images/He_proto_demo.webm" type="video/webm"> -->
             Your browser does not support the video tag.
           </video>
           <img class="project-image" src="Images/SensorLocation.png" alt="Location of sensor and magnet">
@@ -428,11 +426,8 @@
       <div class="tags">MATLAB · Simscape · Robotics · Contact Modeling</div>
       <div class="image-carousel">
         <div class="carousel-track">
-          <!-- Video element with multi-source fallback support -->
           <video class="project-video active" controls autoplay muted loop>
             <source src="Images/SimulationGripper.mp4" type="video/mp4">
-            <!-- If you have a WebM version, you can add it here as a fallback: -->
-            <!-- <source src="Images/He_proto_demo.webm" type="video/webm"> -->
             Your browser does not support the video tag.
           </video>
           <img class="project-image" src="Images/Simulation_vs_Measured_Results_Comparison.jpg" alt="Comparison of Simulated vs Measured Contact Forces">
@@ -457,229 +452,16 @@
         physical and simulated behavior.
       </p>
       <div class="tags">MATLAB · Simscape · Robotics · System Modeling</div>
-      <video class="project-video active" controls autoplay muted loop>
-            <source src="Images/DigitalTwinTest.mp4" type="video/mp4">
-            <!-- If you have a WebM version, you can add it here as a fallback: -->
-            <!-- <source src="Images/He_proto_demo.webm" type="video/webm"> -->
-            Your browser does not support the video tag.
-          </video>
+      <div style="margin-top: 18px; border: 1px solid #ddd; background: #f9f9f9; padding: 15px; border-radius: 4px; text-align: center;">
+        <video class="project-video active" controls autoplay muted loop style="display: block;">
+          <source src="Images/DigitalTwinTest.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
 
     <div class="project">
       <h3>Multi-Agent Continuum Arm Q-Learning</h3>
       <p>
         Implemented a multi-agent reinforcement learning approach for
-        coordinated control of a continuum arm. The project explored state
-        discretization, Q-learning, and coordinated actuator behavior.
-      </p>
-      <div class="tags">Python · Q-Learning · Reinforcement Learning · Robotics</div>
-      <div class="image-carousel">
-        <div class="carousel-track">
-          <!-- Video element with multi-source fallback support -->
-          <img class="project-video active" controls autoplay muted loop>
-            <source src="Images/FullyLearned.gif" type="image/gif">
-            <!-- If you have a WebM version, you can add it here as a fallback: -->
-            <!-- <source src="Images/He_proto_demo.webm" type="video/webm"> -->
-            Your browser does not support the video tag.
-        </img>
-          <img class="project-image" src="Images/PartiallyLearned.gif" alt="Partially Learned Q-Table">
-          <img class="project-image" src="Images/FirstEpisode.gif" alt="First Episode">
-          <img class="project-image" src="Images/JointActionIndependentState.png" alt="Joint Action Independent States">
-        </div>
-        <div class="carousel-nav">
-          <button class="carousel-btn prev-btn">&#10094; Prev</button>
-          <span class="carousel-counter">1 / 4</span>
-          <button class="carousel-btn next-btn">Next &#10095;</button>
-        </div>
-        <div class="thumbnail-strip">
-          <div class="thumb-video-placeholder active-thumb" data-index="0">Video</div>
-          <img class="thumb-img" src="Images/PartiallyLearned.gif" alt="Thumbnail 2" data-index="1">
-          <img class="thumb-img" src="Images/FirstEpisode.gif" alt="Thumbnail 3" data-index="2">
-          <img class="thumb-img" src="Images/JointActionIndependentState.png" alt="Thumbnail 4" data-index="3">
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
-      <h3>Cobot Path Planning</h3>
-      <p>
-        Developed a path planning algorithm for a collaborative robot and
-        evaluated the resulting motion through simulation.
-      </p>
-      <div class="tags">Robotics · Path Planning · Simulation</div>
-      <video class="project-video active" controls autoplay muted loop>
-            <source src="Images/flock.mp4" type="video/mp4">
-            <!-- If you have a WebM version, you can add it here as a fallback: -->
-            <!-- <source src="Images/He_proto_demo.webm" type="video/webm"> -->
-            Your browser does not support the video tag.
-          </video>
-    </div>
-
-    <div class="project">
-      <h3>SNAD — Tripping Hazard Detection</h3>
-      <p>
-        Senior design project using a Raspberry Pi 4 and camera to provide
-        real-time computer vision assistance. A convolutional neural network
-        classified whether a scene contained a potential tripping hazard and
-        alerted the user when one was detected.
-      </p>
-      <div class="tags">Raspberry Pi 4 · CNN · Computer Vision · Python · Embedded Systems</div>
-      <img class="project-image active" src="Images/SNAD_Poster-1.pdf" alt="Poster Description of the project">
-    </div>
-  </section>
-
-  <section id="research">
-    <h2>Research</h2>
-    <div class="project">
-      <h3>Underactuated Robotic Grippers for Non-Cooperative Object Grasping</h3>
-      <p>
-        Research focused on adaptive grasping for objects that are not fixed
-        to a supporting surface, with emphasis on gripper design, sensing,
-        simulation, and experimental evaluation.
-      </p>
-      <a href="YOUR_PAPER_LINK">Paper / Publication</a>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill-group">
-        <h3>Robotics</h3>
-        <p>Robot arms, grippers, actuators, sensors, path planning</p>
-      </div>
-      <div class="skill-group">
-        <h3>Embedded</h3>
-        <p>ESP32, Raspberry Pi, microcontrollers, serial communication</p>
-      </div>
-      <div class="skill-group">
-        <h3>Design</h3>
-        <p>CAD, PCB design, electrical schematics, mechanical design</p>
-      </div>
-      <div class="skill-group">
-        <h3>Simulation</h3>
-        <p>MATLAB, Simscape, system modeling, digital twins</p>
-      </div>
-      <div class="skill-group">
-        <h3>Programming</h3>
-        <p>C/C++, Python, MATLAB</p>
-      </div>
-      <div class="skill-group">
-        <h3>Machine Learning</h3>
-        <p>Q-learning, CNNs, computer vision</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      I am interested in opportunities involving robotics, embedded systems,
-      controls, and medical or intelligent robotic systems.
-    </p>
-    <p>
-      <a href="mailto:Nathaniel.L.Billig@gmail.com">Nathaniel.L.Billig@gmail.com</a>
-    </p>
-  </section>
-</main>
-
-<footer>
-  © 2026 Nathaniel Billig
-</footer>
-
-<!-- Lightbox Modal Structure -->
-<div id="lightbox-modal">
-  <div id="lightbox-content">
-    <span id="lightbox-close">&times;</span>
-    <div id="lightbox-body"></div>
-  </div>
-</div>
-
-<script>
-  // Carousel and Thumbnails functionality (supports both images and videos)
-  document.querySelectorAll('.image-carousel').forEach(carousel => {
-    const items = carousel.querySelectorAll('.project-image, .project-video');
-    const thumbnails = carousel.querySelectorAll('.thumb-img, .thumb-video-placeholder');
-    const prevBtn = carousel.querySelector('.prev-btn');
-    const nextBtn = carousel.querySelector('.next-btn');
-    const counter = carousel.querySelector('.carousel-counter');
-    let currentIndex = 0;
-
-    function showItem(index) {
-      currentIndex = index;
-      items.forEach((item, idx) => {
-        item.classList.toggle('active', idx === currentIndex);
-        // Pause videos when they are navigated away from
-        if (item.tagName === 'VIDEO' && idx !== currentIndex) {
-          item.pause();
-        }
-      });
-      thumbnails.forEach((thumb, idx) => {
-        thumb.classList.toggle('active-thumb', idx === currentIndex);
-      });
-      counter.textContent = `${currentIndex + 1} / ${items.length}`;
-    }
-
-    prevBtn.addEventListener('click', () => {
-      let newIndex = (currentIndex - 1 + items.length) % items.length;
-      showItem(newIndex);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      let newIndex = (currentIndex + 1) % items.length;
-      showItem(newIndex);
-    });
-
-    thumbnails.forEach((thumb, idx) => {
-      thumb.addEventListener('click', () => {
-        showItem(idx);
-      });
-    });
-  });
-
-  // Lightbox functionality
-  const modal = document.getElementById('lightbox-modal');
-  const modalBody = document.getElementById('lightbox-body');
-  const closeBtn = document.getElementById('lightbox-close');
-
-  // Handle clicking on actual project images (.project-image)
-  document.querySelectorAll('.project-image').forEach(img => {
-    img.addEventListener('click', () => {
-      modalBody.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
-      modal.style.display = 'flex';
-    });
-  });
-
-  // Handle clicking on actual project videos (.project-video)
-  document.querySelectorAll('.project-video').forEach(video => {
-    video.addEventListener('click', () => {
-      modalBody.innerHTML = `<video src="${video.src}" controls autoplay></video>`;
-      modal.style.display = 'flex';
-    });
-  });
-
-  // Handle clicking on placeholder media blocks (.media)
-  document.querySelectorAll('.media').forEach(media => {
-    media.addEventListener('click', () => {
-      modalBody.innerHTML = `<div style="padding: 40px; font-size: 18px; color: #555;">${media.innerHTML}</div>`;
-      modal.style.display = 'flex';
-    });
-  });
-
-  // Close modal functionality
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    const modalVideo = modalBody.querySelector('video');
-    if (modalVideo) modalVideo.pause();
-  });
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      const modalVideo = modalBody.querySelector('video');
-      if (modalVideo) modalVideo.pause();
-    }
-  });
-</script>
-</body>
-</html>
+        coordinated control of a continuum arm. The project explored
