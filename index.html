@@ -22,6 +22,9 @@
     header {
       border-bottom: 1px solid #ddd;
       background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     .nav {
@@ -89,6 +92,32 @@
       font-size: 21px;
     }
 
+    /* About Section Styles */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .profile-pic-container {
+      width: 100%;
+      aspect-ratio: 1;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .profile-pic-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .project {
       padding: 25px 0;
       border-bottom: 1px solid #e5e5e5;
@@ -107,26 +136,6 @@
     .tags {
       font-size: 13px;
       color: #666;
-    }
-
-    .media {
-      margin-top: 18px;
-      border: 1px solid #ddd;
-      background: #f5f5f5;
-      min-height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      text-align: center;
-      padding: 25px;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    }
-    .media:hover {
-      background: #eeeeee;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transform: translateY(-2px);
     }
 
     .skills {
@@ -154,12 +163,12 @@
       min-height: 300px;
     }
 
-    /* Made images/videos slightly bigger in their boxes */
     .project-image, .project-video {
       max-width: 100%;
       max-height: 480px;
       width: auto;
       height: auto;
+      object-fit: contain; /* Fixes size mismatch across GIFs and PNGs */
       display: none;
       margin: 0 auto;
       cursor: pointer;
@@ -313,6 +322,8 @@
       nav { margin-top: 10px; }
       nav a { margin: 0 18px 0 0; }
       .skills { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; text-align: center; }
+      .profile-pic-container { max-width: 200px; margin: 0 auto; }
     }
   </style>
 </head>
@@ -322,6 +333,7 @@
   <div class="nav">
     <div class="name">Nathaniel Billig</div>
     <nav>
+      <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#research">Research</a>
       <a href="#skills">Skills</a>
@@ -344,6 +356,23 @@
 </div>
 
 <main>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-grid">
+      <div class="profile-pic-container">
+        <img src="Images/ProfilePic.jpg" alt="Nathaniel Billig">
+      </div>
+      <div>
+        <p style="margin-top: 0; color: #555; font-size: 17px;">
+          I am a passionate graduate engineering student specializing in hardware-software integration, automated systems, and intelligent robotics. My background spans hands-on mechanical and PCB design down to low-level microcontroller programming and machine learning applications.
+        </p>
+        <p style="color: #555; font-size: 17px;">
+          Whether building soft underactuated grippers, designing real-time sensor loops, or validating physical models via digital twins, I enjoy tackling complex multidisciplinary challenges from concept to functional realization.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section id="projects">
     <h2>Projects</h2>
 
@@ -504,7 +533,7 @@
       </div>
     </div>
 
-<div class="project">
+    <div class="project">
       <h3>SNAD — Tripping Hazard Detection</h3>
       <p>
         Senior design project using a Raspberry Pi 4 and camera to provide
@@ -514,7 +543,7 @@
       </p>
       <div class="tags">Raspberry Pi 4 · CNN · Computer Vision · Python · Embedded Systems</div>
       <div style="margin-top: 18px; border: 1px solid #ddd; background: #f9f9f9; padding: 15px; border-radius: 4px; text-align: center;">
-        <img class="project-image active" src="Images/SNAD_Poster-1.png" alt="SNAD Project Poster" style="display: block;">
+        <img class="project-image active" src="Images/SNAD_Poster-1.png" alt="SNAD Project Poster" style="display: block; margin: 0 auto;">
       </div>
     </div>
   </section>
