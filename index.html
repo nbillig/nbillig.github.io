@@ -3,975 +3,326 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Engineering portfolio — robotics, embedded systems, controls, and computer vision.">
-  <title>Your Name | Engineering Portfolio</title>
-
+  <title>YOUR NAME | Engineering Portfolio</title>
   <style>
-    :root {
-      --bg: #0b0f14;
-      --surface: #111720;
-      --surface-2: #171e28;
-      --text: #eef2f6;
-      --muted: #9da9b6;
-      --accent: #69b7ff;
-      --accent-2: #8bd3ff;
-      --border: #26313d;
-      --max-width: 1120px;
-      --radius: 14px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a { color: #245b8f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    .container {
-      width: min(calc(100% - 40px), var(--max-width));
-      margin: 0 auto;
+    header {
+      border-bottom: 1px solid #ddd;
+      background: #fff;
     }
 
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(11, 15, 20, 0.82);
-      border-bottom: 1px solid rgba(38, 49, 61, 0.7);
-    }
-
-    .nav-inner {
-      min-height: 68px;
+    .nav {
+      max-width: 1050px;
+      margin: auto;
+      padding: 18px 25px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      align-items: center;
     }
 
-    .logo {
-      font-weight: 750;
-      letter-spacing: -0.02em;
+    .name {
+      font-weight: 700;
+      color: #222;
     }
 
-    .logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      gap: 26px;
-      color: var(--muted);
-      font-size: 0.92rem;
+    nav a {
+      margin-left: 24px;
+      color: #444;
+      font-size: 15px;
     }
 
-    .nav-links a:hover { color: var(--text); }
-
-    /* Hero */
     .hero {
-      padding: 120px 0 105px;
-      border-bottom: 1px solid var(--border);
+      max-width: 1050px;
+      margin: auto;
+      padding: 85px 25px 70px;
     }
 
-    .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      font-weight: 750;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      max-width: 850px;
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-      margin-bottom: 28px;
+    .hero h1 {
+      font-size: 42px;
+      margin: 0 0 10px;
+      font-weight: 700;
     }
 
     .hero p {
-      max-width: 690px;
-      color: var(--muted);
-      font-size: 1.12rem;
-      margin-bottom: 32px;
+      max-width: 650px;
+      color: #555;
+      font-size: 19px;
+      margin: 0 0 25px;
     }
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .links a {
+      margin-right: 18px;
+      font-size: 15px;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 17px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
-      font-weight: 650;
-      font-size: 0.9rem;
-      transition: 0.2s ease;
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 25px;
     }
 
-    .button.primary {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-    }
-
-    /* Sections */
-    section { padding: 95px 0; }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      gap: 50px;
-      margin-bottom: 55px;
-    }
-
-    .section-number {
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 750;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+    section {
+      padding: 55px 0;
+      border-top: 1px solid #e5e5e5;
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      margin-bottom: 16px;
+      font-size: 27px;
+      margin: 0 0 28px;
     }
 
-    .section-intro {
-      color: var(--muted);
-      max-width: 680px;
+    h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
     }
 
-    /* Project cards */
     .project {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 28px;
+      padding: 25px 0;
+      border-bottom: 1px solid #e5e5e5;
     }
 
-    .project-header {
-      padding: 30px;
-      display: flex;
-      justify-content: space-between;
-      gap: 25px;
-      align-items: flex-start;
+    .project:last-child {
+      border-bottom: none;
     }
 
-    .project-header h3 {
-      font-size: 1.55rem;
-      letter-spacing: -0.025em;
-      margin-bottom: 8px;
-    }
-
-    .project-header p {
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .project-tag {
-      white-space: nowrap;
-      color: var(--accent);
-      font-size: 0.76rem;
-      font-weight: 750;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .media-placeholder {
-      min-height: 330px;
-      background:
-        linear-gradient(135deg, rgba(105,183,255,0.08), transparent 45%),
-        var(--surface-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #718090;
-      text-align: center;
-      padding: 30px;
-    }
-
-    .media-placeholder strong {
-      display: block;
-      color: #aab5c0;
-      margin-bottom: 6px;
-    }
-
-    .media-placeholder small { color: #667381; }
-
-    .project-body { padding: 30px; }
-
-    .project-body h4 {
-      margin-bottom: 10px;
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-    }
-
-    .project-body p {
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .subprojects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 25px;
-    }
-
-    .subproject {
-      padding: 19px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-
-    .subproject h5 { margin-bottom: 6px; }
-
-    .subproject p {
-      font-size: 0.9rem;
-      margin: 0;
+    .project p {
+      color: #555;
+      max-width: 800px;
+      margin: 7px 0 12px;
     }
 
     .tags {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .media {
+      margin-top: 18px;
+      border: 1px solid #ddd;
+      background: #f5f5f5;
+      min-height: 150px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      text-align: center;
+      padding: 25px;
     }
 
-    .tag {
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 5px 10px;
-      color: #b9c3cd;
-      font-size: 0.76rem;
-      background: rgba(255,255,255,0.015);
-    }
-
-    /* Two-column project cards */
-    .compact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .compact-project {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .compact-project .media-placeholder { min-height: 240px; }
-
-    .compact-content { padding: 27px; }
-
-    .compact-content h3 {
-      font-size: 1.35rem;
-      margin-bottom: 9px;
-    }
-
-    .compact-content p {
-      color: var(--muted);
-      font-size: 0.94rem;
-      margin-bottom: 18px;
-    }
-
-    /* Skills */
     .skills {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .skill-group {
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--surface);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
     }
 
     .skill-group h3 {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
+      font-size: 17px;
+      margin-bottom: 5px;
     }
 
     .skill-group p {
-      color: var(--muted);
-      font-size: 0.87rem;
+      color: #555;
+      margin: 0;
     }
 
-    /* Footer */
     footer {
-      padding: 70px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 25px;
+      color: #777;
+      font-size: 13px;
+      border-top: 1px solid #e5e5e5;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .footer-links a:hover { color: var(--text); }
-
-    /* Responsive */
-    @media (max-width: 800px) {
-      .nav-links { display: none; }
-
-      .hero { padding: 85px 0 75px; }
-
-      section { padding: 70px 0; }
-
-      .section-heading,
-      .compact-grid,
-      .skills,
-      .subprojects {
-        grid-template-columns: 1fr;
-      }
-
-      .project-header {
-        flex-direction: column;
-      }
-
-      .media-placeholder { min-height: 240px; }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 34px; }
+      .nav { display: block; }
+      nav { margin-top: 10px; }
+      nav a { margin: 0 18px 0 0; }
+      .skills { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
+<header>
+  <div class="nav">
+    <div class="name">YOUR NAME</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <nav>
-    <div class="container nav-inner">
-      <a class="logo" href="#top">YOUR NAME<span>.</span></a>
+<div class="hero">
+  <h1>YOUR NAME</h1>
+  <p>
+    Graduate student and engineer working in robotics, embedded systems,
+    controls, and mechanical/electrical design.
+  </p>
+  <div class="links">
+    <a href="YOUR_RESUME_URL.pdf">Resume</a>
+    <a href="https://github.com/YOUR_USERNAME">GitHub</a>
+    <a href="https://www.linkedin.com/in/YOUR_USERNAME/">LinkedIn</a>
+  </div>
+</div>
 
-      <div class="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+<main>
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Soft Adaptive Robotic Gripper</h3>
+      <p>
+        Designed and built a tendon-driven soft robotic gripper for grasping
+        non-cooperative objects. Work included mechanical CAD, five electrical
+        schematics, PCB design, embedded control, sensing, simulation, and
+        experimental testing.
+      </p>
+      <div class="tags">CAD · PCB Design · Embedded Systems · Sensors · Robotics · Simulation</div>
+      <div class="media">PLACEHOLDER — Add gripper CAD render, PCB image, or demonstration video</div>
+    </div>
+
+    <div class="project">
+      <h3>Hall-Effect Sensor Live Integration</h3>
+      <p>
+        Integrated Hall-effect sensors into robotic joints to measure joint
+        position in real time. Developed the electronics, data acquisition,
+        calibration, and live sensor-to-angle mapping.
+      </p>
+      <div class="tags">ESP32 · Hall Sensors · Calibration · Real-Time Data</div>
+      <div class="media">PLACEHOLDER — Add live sensor demonstration</div>
+    </div>
+
+    <div class="project">
+      <h3>Contact Force Simulation</h3>
+      <p>
+        Developed a simulation of tendon-driven finger mechanics and contact
+        forces to investigate how actuator tension produces forces at the
+        grasping surface.
+      </p>
+      <div class="tags">MATLAB · Simscape · Robotics · Contact Modeling</div>
+      <div class="media">PLACEHOLDER — Add simulation image or plot</div>
+    </div>
+
+    <div class="project">
+      <h3>Digital Twin Recreation</h3>
+      <p>
+        Recreated the physical gripper as a digital model and connected
+        measured sensor data to the simulated system for comparison between
+        physical and simulated behavior.
+      </p>
+      <div class="tags">MATLAB · Simscape · Robotics · System Modeling</div>
+      <div class="media">PLACEHOLDER — Add physical vs. simulation comparison</div>
+    </div>
+
+    <div class="project">
+      <h3>Multi-Agent Continuum Arm Q-Learning</h3>
+      <p>
+        Implemented a multi-agent reinforcement learning approach for
+        coordinated control of a continuum arm. The project explored state
+        discretization, Q-learning, and coordinated actuator behavior.
+      </p>
+      <div class="tags">Python · Q-Learning · Reinforcement Learning · Robotics</div>
+      <div class="media">PLACEHOLDER — Add Q-learning demonstration or plot</div>
+    </div>
+
+    <div class="project">
+      <h3>Cobot Path Planning</h3>
+      <p>
+        Developed a path planning algorithm for a collaborative robot and
+        evaluated the resulting motion through simulation.
+      </p>
+      <div class="tags">Robotics · Path Planning · Simulation</div>
+      <div class="media">PLACEHOLDER — Add path planning video</div>
+    </div>
+
+    <div class="project">
+      <h3>SNAD — Tripping Hazard Detection</h3>
+      <p>
+        Senior design project using a Raspberry Pi 4 and camera to provide
+        real-time computer vision assistance. A convolutional neural network
+        classified whether a scene contained a potential tripping hazard and
+        alerted the user when one was detected.
+      </p>
+      <div class="tags">Raspberry Pi 4 · CNN · Computer Vision · Python · Embedded Systems</div>
+      <div class="media">PLACEHOLDER — Add SNAD prototype or demonstration video</div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="project">
+      <h3>Underactuated Robotic Grippers for Non-Cooperative Object Grasping</h3>
+      <p>
+        Research focused on adaptive grasping for objects that are not fixed
+        to a supporting surface, with emphasis on gripper design, sensing,
+        simulation, and experimental evaluation.
+      </p>
+      <a href="YOUR_PAPER_LINK">Paper / Publication</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Robotics</h3>
+        <p>Robot arms, grippers, actuators, sensors, path planning</p>
+      </div>
+      <div class="skill-group">
+        <h3>Embedded</h3>
+        <p>ESP32, Raspberry Pi, microcontrollers, serial communication</p>
+      </div>
+      <div class="skill-group">
+        <h3>Design</h3>
+        <p>CAD, PCB design, electrical schematics, mechanical design</p>
+      </div>
+      <div class="skill-group">
+        <h3>Simulation</h3>
+        <p>MATLAB, Simscape, system modeling, digital twins</p>
+      </div>
+      <div class="skill-group">
+        <h3>Programming</h3>
+        <p>C/C++, Python, MATLAB</p>
+      </div>
+      <div class="skill-group">
+        <h3>Machine Learning</h3>
+        <p>Q-learning, CNNs, computer vision</p>
       </div>
     </div>
-  </nav>
-
-  <main id="top">
-
-    <!-- HERO -->
-    <header class="hero">
-      <div class="container">
-        <div class="eyebrow">Robotics · Embedded Systems · Controls</div>
-
-        <h1>Engineering systems that connect software to the physical world.</h1>
-
-        <p>
-          Electrical & Computer Engineering graduate student focused on robotics,
-          embedded systems, sensing, controls, and intelligent systems.
-          This portfolio highlights selected academic, research, and engineering projects.
-        </p>
-
-        <div class="buttons">
-          <!-- Replace these links -->
-          <a class="button primary" href="YOUR_RESUME_URL.pdf" target="_blank">View Resume</a>
-          <a class="button" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
-          <a class="button" href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank">LinkedIn</a>
-        </div>
-      </div>
-    </header>
-
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="container">
-
-        <div class="section-heading">
-          <div>
-            <div class="section-number">01 / Featured Work</div>
-          </div>
-
-          <div>
-            <h2>Selected engineering projects.</h2>
-            <p class="section-intro">
-              A selection of robotics, embedded systems, simulation, controls,
-              and computer vision projects. Each project page can be expanded
-              with photographs, videos, CAD, schematics, source code, and results.
-            </p>
-          </div>
-        </div>
-
-
-        <!-- GRIPPER -->
-        <article class="project">
-          <div class="project-header">
-            <div>
-              <h3>Soft Adaptive Robotic Gripper</h3>
-              <p>
-                Designed and evaluated an underactuated robotic gripper for
-                grasping non-cooperative objects in a microgravity-inspired environment.
-              </p>
-            </div>
-            <div class="project-tag">Robotics / Research</div>
-          </div>
-
-          <!-- Replace with your main gripper image -->
-          <div class="media-placeholder">
-            <div>
-              <strong>MAIN GRIPPER IMAGE / VIDEO</strong>
-              Replace this area with a high-quality photograph or short looping video
-              of the completed gripper.
-            </div>
-          </div>
-
-          <div class="project-body">
-            <h4>Overview</h4>
-            <p>
-              Replace this paragraph with 3–5 sentences describing the problem,
-              your design approach, your personal contribution, and the most
-              important result. Focus on engineering decisions and measurable outcomes.
-            </p>
-
-            <div class="subprojects">
-
-              <div class="subproject">
-                <h5>CAD & Mechanical Design</h5>
-                <p>
-                  Describe the finger geometry, flexure joints, tendon routing,
-                  materials, manufacturing process, and major design iterations.
-                </p>
-                <!-- Optional: link to CAD -->
-                <div class="tags">
-                  <span class="tag">CAD</span>
-                  <span class="tag">TPU</span>
-                  <span class="tag">PLA</span>
-                  <span class="tag">3D Printing</span>
-                </div>
-              </div>
-
-              <div class="subproject">
-                <h5>Electrical Schematics</h5>
-                <p>
-                  Add links/images for the five schematics. Briefly explain
-                  the architecture and why major components were selected.
-                </p>
-                <div class="tags">
-                  <span class="tag">ESP32</span>
-                  <span class="tag">Load Cells</span>
-                  <span class="tag">Encoders</span>
-                  <span class="tag">Motor Drivers</span>
-                </div>
-              </div>
-
-              <div class="subproject">
-                <h5>PCB Design</h5>
-                <p>
-                  Show the PCB layout, manufactured board, and key design decisions.
-                  Mention power regulation, sensor interfaces, connectors, and routing.
-                </p>
-                <div class="tags">
-                  <span class="tag">CircuitMaker</span>
-                  <span class="tag">PCB Layout</span>
-                  <span class="tag">Power</span>
-                  <span class="tag">Signal Integrity</span>
-                </div>
-              </div>
-
-              <div class="subproject">
-                <h5>System Integration</h5>
-                <p>
-                  Explain how sensing, actuation, embedded firmware, and mechanical
-                  components were integrated into one complete robotic system.
-                </p>
-                <div class="tags">
-                  <span class="tag">Embedded C/C++</span>
-                  <span class="tag">SPI</span>
-                  <span class="tag">UART</span>
-                  <span class="tag">I²C</span>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="tags">
-              <span class="tag">Robotics</span>
-              <span class="tag">Mechatronics</span>
-              <span class="tag">Embedded Systems</span>
-              <span class="tag">Force Sensing</span>
-              <span class="tag">Controls</span>
-              <span class="tag">MATLAB</span>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- SENSOR -->
-        <article class="project">
-          <div class="project-header">
-            <div>
-              <h3>Hall-Effect Sensor Live Integration</h3>
-              <p>
-                Real-time magnetic joint-angle sensing and calibration integrated
-                into a robotic joint.
-              </p>
-            </div>
-            <div class="project-tag">Embedded / Sensing</div>
-          </div>
-
-          <!-- Replace with sensor video/GIF -->
-          <div class="media-placeholder">
-            <div>
-              <strong>LIVE SENSOR DEMONSTRATION</strong>
-              Replace with a GIF/video showing the joint moving while the
-              measured angle updates in real time.
-            </div>
-          </div>
-
-          <div class="project-body">
-            <h4>What I Built</h4>
-            <p>
-              Describe the sensor arrangement, analog acquisition, multiplexing,
-              ESP32 interface, calibration procedure, and live visualization.
-              Include a calibration plot here if available.
-            </p>
-
-            <div class="tags">
-              <span class="tag">ESP32</span>
-              <span class="tag">Hall Effect Sensors</span>
-              <span class="tag">CD74HC4067</span>
-              <span class="tag">Calibration</span>
-              <span class="tag">MATLAB</span>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- CONTACT FORCE SIM -->
-        <article class="project">
-          <div class="project-header">
-            <div>
-              <h3>Contact Force Simulation</h3>
-              <p>
-                Simulation of tendon-driven finger mechanics and object contact
-                forces using a physics-based model.
-              </p>
-            </div>
-            <div class="project-tag">Simulation / Controls</div>
-          </div>
-
-          <div class="media-placeholder">
-            <div>
-              <strong>SIMULATION VIDEO / FIGURE</strong>
-              Replace with a Simscape animation, force plot, or simulation screenshot.
-            </div>
-          </div>
-
-          <div class="project-body">
-            <h4>Approach</h4>
-            <p>
-              Explain how tendon tension was converted to joint torques, how
-              contacts were modeled, and how simulated forces were compared
-              against experimental measurements.
-            </p>
-
-            <div class="tags">
-              <span class="tag">MATLAB</span>
-              <span class="tag">Simscape</span>
-              <span class="tag">Dynamics</span>
-              <span class="tag">Contact Modeling</span>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- DIGITAL TWIN -->
-        <article class="project">
-          <div class="project-header">
-            <div>
-              <h3>Digital Twin Recreation</h3>
-              <p>
-                Recreation of the physical robotic system in simulation for
-                analysis, testing, and controller development.
-              </p>
-            </div>
-            <div class="project-tag">Digital Twin</div>
-          </div>
-
-          <div class="media-placeholder">
-            <div>
-              <strong>PHYSICAL vs. DIGITAL TWIN</strong>
-              Replace with a side-by-side image/video of the physical gripper
-              and its simulated counterpart.
-            </div>
-          </div>
-
-          <div class="project-body">
-            <h4>Implementation</h4>
-            <p>
-              Describe the geometry recreation, joint models, actuation,
-              sensing, contact behavior, and any differences discovered
-              between simulation and hardware.
-            </p>
-
-            <div class="tags">
-              <span class="tag">Digital Twin</span>
-              <span class="tag">MATLAB</span>
-              <span class="tag">Simscape</span>
-              <span class="tag">Robotics</span>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- CONTINUUM ARM -->
-        <article class="project">
-          <div class="project-header">
-            <div>
-              <h3>Multi-Agent Continuum Arm Q-Learning</h3>
-              <p>
-                Reinforcement-learning demonstration for coordinated control
-                of a continuum robotic arm using multiple agents.
-              </p>
-            </div>
-            <div class="project-tag">Machine Learning / Controls</div>
-          </div>
-
-          <div class="media-placeholder">
-            <div>
-              <strong>Q-LEARNING DEMONSTRATION</strong>
-              Replace with an animation of the arm learning or a plot showing
-              reward/convergence and the resulting trajectory.
-            </div>
-          </div>
-
-          <div class="project-body">
-            <h4>Algorithm</h4>
-            <p>
-              Describe the state representation, action space, reward function,
-              multi-agent structure, exploration strategy, and final performance.
-              Add quantitative results such as convergence time or tracking error.
-            </p>
-
-            <div class="tags">
-              <span class="tag">Q-Learning</span>
-              <span class="tag">Multi-Agent RL</span>
-              <span class="tag">Python / MATLAB</span>
-              <span class="tag">Robotics</span>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- COBOT -->
-        <article class="project">
-          <div class="project-header">
-            <div>
-              <h3>Cobot Path Planning Algorithm</h3>
-              <p>
-                Motion-planning algorithm developed and demonstrated on a
-                collaborative robotic system.
-              </p>
-            </div>
-            <div class="project-tag">Motion Planning</div>
-          </div>
-
-          <div class="media-placeholder">
-            <div>
-              <strong>COBOT PATH-PLANNING VIDEO</strong>
-              Replace this entire area with your MP4/WebM video.
-              Keep the video short and show the algorithm and final robot motion.
-            </div>
-          </div>
-
-          <div class="project-body">
-            <h4>Implementation</h4>
-            <p>
-              Explain the planning problem, algorithm used, constraints,
-              collision handling, and how the generated path was executed
-              on the cobot.
-            </p>
-
-            <div class="tags">
-              <span class="tag">Path Planning</span>
-              <span class="tag">Cobot</span>
-              <span class="tag">Robotics</span>
-              <span class="tag">Motion Control</span>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- SNAD -->
-        <article class="project">
-          <div class="project-header">
-            <div>
-              <h3>SNAD — Computer Vision Tripping-Hazard Detection</h3>
-              <p>
-                Assistive technology system using a Raspberry Pi 4 and CNN-based
-                computer vision to detect potential tripping hazards.
-              </p>
-            </div>
-            <div class="project-tag">Senior Design</div>
-          </div>
-
-          <div class="media-placeholder">
-            <div>
-              <strong>SNAD SYSTEM PHOTO / DEMONSTRATION VIDEO</strong>
-              Replace with your best photo or a short demonstration of the
-              Raspberry Pi, camera, detection system, and user alert.
-            </div>
-          </div>
-
-          <div class="project-body">
-            <h4>System Overview</h4>
-            <p>
-              SNAD was designed as an assistive device for visually impaired users.
-              A Raspberry Pi 4 captured live camera imagery, which was processed
-              by a convolutional neural network to classify whether a scene
-              contained a potential tripping hazard. When a hazard was detected,
-              the system alerted the user.
-            </p>
-
-            <div class="subprojects">
-
-              <div class="subproject">
-                <h5>Computer Vision</h5>
-                <p>
-                  Describe the dataset, preprocessing, CNN architecture,
-                  training procedure, classification accuracy, and limitations.
-                </p>
-                <div class="tags">
-                  <span class="tag">CNN</span>
-                  <span class="tag">Computer Vision</span>
-                  <span class="tag">Python</span>
-                </div>
-              </div>
-
-              <div class="subproject">
-                <h5>Embedded System</h5>
-                <p>
-                  Explain the Raspberry Pi 4 implementation, camera interface,
-                  inference pipeline, and real-time performance.
-                </p>
-                <div class="tags">
-                  <span class="tag">Raspberry Pi 4</span>
-                  <span class="tag">Linux</span>
-                  <span class="tag">Python</span>
-                </div>
-              </div>
-
-              <div class="subproject">
-                <h5>User Alert</h5>
-                <p>
-                  Describe how a detected hazard was communicated to the user
-                  and the design considerations for an assistive application.
-                </p>
-                <div class="tags">
-                  <span class="tag">Assistive Tech</span>
-                  <span class="tag">Real-Time</span>
-                </div>
-              </div>
-
-              <div class="subproject">
-                <h5>System Integration</h5>
-                <p>
-                  Show the complete pipeline from camera capture through
-                  neural-network inference to user feedback.
-                </p>
-                <div class="tags">
-                  <span class="tag">Embedded AI</span>
-                  <span class="tag">Computer Vision</span>
-                  <span class="tag">Systems Engineering</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-
-    <!-- RESEARCH -->
-    <section id="research">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <div class="section-number">02 / Research</div>
-          </div>
-
-          <div>
-            <h2>Research & technical work.</h2>
-            <p class="section-intro">
-              Use this section for publications, conference presentations,
-              research positions, posters, or other work that demonstrates
-              technical depth.
-            </p>
-          </div>
-        </div>
-
-        <article class="project">
-          <div class="project-body">
-            <h3 style="font-size:1.45rem; margin-bottom:10px;">
-              Underactuated Robotic Grippers for Non-Cooperative Object Grasping
-            </h3>
-
-            <p>
-              <strong>Conference:</strong> YOUR CONFERENCE / YEAR<br>
-              <strong>Role:</strong> YOUR ROLE / LAB / ADVISOR<br>
-              <strong>Publication:</strong> <a href="YOUR_PAPER_LINK" style="color:var(--accent);">View paper →</a>
-            </p>
-
-            <div class="tags">
-              <span class="tag">Robotic Manipulation</span>
-              <span class="tag">Adaptive Grasping</span>
-              <span class="tag">Space Robotics</span>
-              <span class="tag">Experimental Robotics</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <div class="section-number">03 / Technical Skills</div>
-          </div>
-
-          <div>
-            <h2>Tools I work with.</h2>
-            <p class="section-intro">
-              Keep this list focused on technologies you can comfortably
-              discuss in an interview.
-            </p>
-          </div>
-        </div>
-
-        <div class="skills">
-          <div class="skill-group">
-            <h3>Embedded</h3>
-            <p>ESP32 · C/C++ · Raspberry Pi · SPI · UART · I²C · GPIO</p>
-          </div>
-
-          <div class="skill-group">
-            <h3>Robotics</h3>
-            <p>Robot Manipulation · Cobot Systems · Sensors · Actuation · Controls</p>
-          </div>
-
-          <div class="skill-group">
-            <h3>Simulation</h3>
-            <p>MATLAB · Simulink · Simscape · Robot Modeling · Dynamics</p>
-          </div>
-
-          <div class="skill-group">
-            <h3>Design</h3>
-            <p>CAD · PCB Design · CircuitMaker · 3D Printing · Prototyping</p>
-          </div>
-
-          <div class="skill-group">
-            <h3>Machine Learning</h3>
-            <p>Python · CNNs · Q-Learning · Reinforcement Learning · Computer Vision</p>
-          </div>
-
-          <div class="skill-group">
-            <h3>Programming</h3>
-            <p>C/C++ · Python · MATLAB · Git · Linux</p>
-          </div>
-
-          <div class="skill-group">
-            <h3>Instrumentation</h3>
-            <p>Load Cells · Hall Sensors · Encoders · Data Acquisition · Calibration</p>
-          </div>
-
-          <div class="skill-group">
-            <h3>Engineering</h3>
-            <p>System Integration · Experimental Testing · Technical Documentation</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <div class="section-number">04 / Contact</div>
-          </div>
-
-          <div>
-            <h2>Let's build something.</h2>
-            <p class="section-intro">
-              I'm interested in opportunities involving robotics, embedded
-              systems, controls, and intelligent physical systems.
-            </p>
-
-            <div class="buttons" style="margin-top:25px;">
-              <a class="button primary" href="mailto:YOUR_EMAIL@example.com">Email Me</a>
-              <a class="button" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
-              <a class="button" href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank">LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-
-  <footer>
-    <div class="container footer-inner">
-      <div>© 2026 YOUR NAME</div>
-
-      <div class="footer-links">
-        <a href="YOUR_RESUME_URL.pdf">Resume</a>
-        <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </footer>
-
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      I am interested in opportunities involving robotics, embedded systems,
+      controls, and medical or intelligent robotic systems.
+    </p>
+    <p>
+      <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 YOUR NAME
+</footer>
 </body>
 </html>
