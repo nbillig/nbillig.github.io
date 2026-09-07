@@ -135,7 +135,7 @@
       gap: 25px;
     }
 
-    /* Carousel Styles for Rotating Images */
+    /* Carousel & Thumbnails Styles */
     .image-carousel {
       position: relative;
       margin-top: 18px;
@@ -178,6 +178,7 @@
       justify-content: space-between;
       align-items: center;
       margin-top: 10px;
+      margin-bottom: 12px;
     }
 
     .carousel-btn {
@@ -197,6 +198,36 @@
     .carousel-counter {
       font-size: 13px;
       color: #666;
+    }
+
+    /* Thumbnail Strip Styles */
+    .thumbnail-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      justify-content: center;
+      padding-top: 8px;
+      border-top: 1px solid #ddd;
+    }
+
+    .thumb-img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 3px;
+      opacity: 0.6;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .thumb-img:hover {
+      opacity: 0.9;
+    }
+
+    .thumb-img.active-thumb {
+      border-color: #245b8f;
+      opacity: 1;
     }
 
     .skill-group h3 {
@@ -311,7 +342,7 @@
       </p>
       <div class="tags">CAD · PCB Design · Embedded Systems · Sensor Integration · Robotics · Kinematic/Dynamic Modeling · Simulation</div>
       
-      <!-- Carousel Container for Multiple Images -->
+      <!-- Carousel Container with Thumbnails -->
       <div class="image-carousel">
         <div class="carousel-track">
           <img class="project-image active" src="Images/SingleFingerAssembly.png" alt="CAD model of a single finger of the adaptive gripper">
@@ -326,6 +357,15 @@
           <button class="carousel-btn prev-btn">&#10094; Prev</button>
           <span class="carousel-counter">1 / 7</span>
           <button class="carousel-btn next-btn">Next &#10095;</button>
+        </div>
+        <div class="thumbnail-strip">
+          <img class="thumb-img active-thumb" src="Images/SingleFingerAssembly.png" alt="Thumbnail 1" data-index="0">
+          <img class="thumb-img" src="Images/D24Schem.png" alt="Thumbnail 2" data-index="1">
+          <img class="thumb-img" src="Images/DRVschem.png" alt="Thumbnail 3" data-index="2">
+          <img class="thumb-img" src="Images/HXSchem.png" alt="Thumbnail 4" data-index="3">
+          <img class="thumb-img" src="Images/MuxSchem.png" alt="Thumbnail 5" data-index="4">
+          <img class="thumb-img" src="Images/mainSchem.png" alt="Thumbnail 6" data-index="5">
+          <img class="thumb-img" src="Images/PCB.png" alt="Thumbnail 7" data-index="6">
         </div>
       </div>
     </div>
@@ -465,29 +505,40 @@
 </div>
 
 <script>
-  // Carousel functionality
+  // Carousel and Thumbnails functionality
   document.querySelectorAll('.image-carousel').forEach(carousel => {
     const images = carousel.querySelectorAll('.project-image');
+    const thumbnails = carousel.querySelectorAll('.thumb-img');
     const prevBtn = carousel.querySelector('.prev-btn');
     const nextBtn = carousel.querySelector('.next-btn');
     const counter = carousel.querySelector('.carousel-counter');
     let currentIndex = 0;
 
-    function updateCarousel() {
+    function showImage(index) {
+      currentIndex = index;
       images.forEach((img, idx) => {
         img.classList.toggle('active', idx === currentIndex);
+      });
+      thumbnails.forEach((thumb, idx) => {
+        thumb.classList.toggle('active-thumb', idx === currentIndex);
       });
       counter.textContent = `${currentIndex + 1} / ${images.length}`;
     }
 
     prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateCarousel();
+      let newIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(newIndex);
     });
 
     nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      updateCarousel();
+      let newIndex = (currentIndex + 1) % images.length;
+      showImage(newIndex);
+    });
+
+    thumbnails.forEach((thumb, idx) => {
+      thumb.addEventListener('click', () => {
+        showImage(idx);
+      });
     });
   });
 
