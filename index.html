@@ -4,9 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nathaniel Billig | Engineering Portfolio</title>
+
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -26,6 +33,11 @@
       color: #0f172a;
       text-decoration: underline;
     }
+
+
+    /* =========================
+       HEADER / NAVIGATION
+       ========================= */
 
     header {
       border-bottom: 1px solid #cbd5e1;
@@ -61,50 +73,59 @@
       color: #0f172a;
     }
 
-    /* Hero Section */
+
+    /* =========================
+       HERO
+       ========================= */
+
     .hero {
       max-width: 1500px;
       margin: 30px auto;
-      padding: 55px 40px;
+      padding: 65px 55px;
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: 8px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-      align-items: center;
       box-shadow: 0 1px 3px rgba(0,0,0,0.01);
     }
 
+    .hero-content {
+      max-width: 950px;
+    }
+
     .hero-content h1 {
-      font-size: 42px;
+      font-size: 44px;
       margin: 0 0 8px;
       font-weight: 700;
       color: #0f172a;
+      letter-spacing: -0.5px;
     }
 
     .hero-title {
-      font-size: 20px;
+      font-size: 21px;
       color: #475569;
-      margin: 0 0 22px;
+      margin: 0 0 18px;
+      font-weight: 500;
     }
 
     .hero-description {
-      max-width: 750px;
-      color: #475569;
+      max-width: 850px;
+      color: #64748b;
       font-size: 17px;
-      margin: 0 0 25px;
+      margin: 0 0 28px;
     }
 
     .links a {
-      margin-right: 18px;
+      display: inline-block;
+      margin-right: 12px;
       font-size: 15px;
       color: #334155;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      padding: 6px 12px;
+      padding: 7px 13px;
       border-radius: 4px;
-      transition: background 0.2s ease, border-color 0.2s ease;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .links a:hover {
@@ -113,6 +134,11 @@
       color: #0f172a;
       text-decoration: none;
     }
+
+
+    /* =========================
+       MAIN CONTENT
+       ========================= */
 
     main {
       max-width: 1400px;
@@ -143,7 +169,11 @@
       color: #1e293b;
     }
 
-    /* About Section */
+
+    /* =========================
+       ABOUT
+       ========================= */
+
     .about-content {
       display: grid;
       grid-template-columns: 350px 1fr;
@@ -175,7 +205,11 @@
       margin-bottom: 0;
     }
 
-    /* Education Section */
+
+    /* =========================
+       EDUCATION
+       ========================= */
+
     .education-entry {
       padding: 20px 0;
       border-bottom: 1px solid #e2e8f0;
@@ -207,35 +241,68 @@
       font-size: 14px;
     }
 
-    /* Areas of Interest */
-    .interests {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+    /* =========================
+       EXPERIENCE
+       ========================= */
+
+    .experience-entry {
+      padding: 22px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .experience-entry:first-child {
+      padding-top: 0;
+    }
+
+    .experience-entry:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
       gap: 20px;
+      margin-bottom: 3px;
     }
 
-    .interest-group {
-      background: #f8fafc;
-      padding: 18px;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-    }
-
-    .interest-group h3 {
-      font-size: 17px;
-      margin-bottom: 5px;
+    .experience-title {
+      font-size: 20px;
+      font-weight: 600;
       color: #1e293b;
     }
 
-    .interest-group p {
+    .experience-date {
+      color: #64748b;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .experience-organization {
       color: #475569;
+      margin-bottom: 10px;
+    }
+
+    .experience-entry p {
+      color: #475569;
+      max-width: 1000px;
       margin: 0;
     }
 
-    /* Projects */
+
+    /* =========================
+       PROJECTS
+       ========================= */
+
     .project {
       padding: 25px 0;
       border-bottom: 1px solid #e2e8f0;
+    }
+
+    .project:first-child {
+      padding-top: 0;
     }
 
     .project:last-child {
@@ -244,8 +311,30 @@
 
     .project p {
       color: #475569;
-      max-width: 800px;
+      max-width: 1050px;
       margin: 7px 0 12px;
+    }
+
+    .project-featured {
+      padding-top: 5px;
+    }
+
+    .project-featured h3 {
+      font-size: 23px;
+    }
+
+    .featured-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
     }
 
     .tags {
@@ -258,7 +347,179 @@
       border-radius: 4px;
     }
 
-    /* Skills */
+
+    /* =========================
+       CAROUSEL
+       ========================= */
+
+    .image-carousel {
+      position: relative;
+      margin-top: 18px;
+      width: 100%;
+      max-width: 100%;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 500px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .project-image,
+    .project-video {
+      display: none;
+      margin: 0 auto;
+      max-width: 100%;
+      max-height: 750px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .project-image.active,
+    .project-video.active {
+      display: block;
+    }
+
+    video.project-video {
+      width: 100%;
+      max-width: 1050px;
+      max-height: 700px;
+      height: auto;
+      object-fit: contain;
+      background: #000;
+    }
+
+    img.project-image {
+      max-width: 100%;
+      max-height: 750px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .project-image:hover,
+    .project-video:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transform: scale(1.01);
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    .carousel-btn {
+      background: #475569;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      border-radius: 3px;
+      transition: background 0.2s ease;
+    }
+
+    .carousel-btn:hover {
+      background: #334155;
+    }
+
+    .carousel-counter {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .thumbnail-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      justify-content: center;
+      padding-top: 8px;
+      border-top: 1px solid #cbd5e1;
+    }
+
+    .thumb-img,
+    .thumb-video-placeholder {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 3px;
+      opacity: 0.6;
+      transition:
+        opacity 0.2s ease,
+        border-color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .thumb-video-placeholder {
+      background: #475569;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .thumb-img:hover,
+    .thumb-video-placeholder:hover {
+      opacity: 0.9;
+    }
+
+    .thumb-img.active-thumb,
+    .thumb-video-placeholder.active-thumb {
+      border-color: #475569;
+      opacity: 1;
+    }
+
+
+    /* =========================
+       RESEARCH
+       ========================= */
+
+    .research-entry {
+      padding: 0;
+    }
+
+    .research-entry p {
+      color: #475569;
+      max-width: 1000px;
+      margin: 7px 0 12px;
+    }
+
+    .research-status {
+      font-size: 14px;
+      font-weight: bold;
+      color: #475569;
+      margin-top: 12px;
+    }
+
+
+    /* =========================
+       TECHNICAL SKILLS
+       ========================= */
+
     .skills {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -274,7 +535,7 @@
 
     .skill-group h3 {
       font-size: 17px;
-      margin-bottom: 5px;
+      margin-bottom: 7px;
       color: #1e293b;
     }
 
@@ -283,147 +544,24 @@
       margin: 0;
     }
 
-    /* Carousel & Thumbnails */
-.image-carousel {
-  position: relative;
-  margin-top: 18px;
-  width: 100%;
-  max-width: 100%;
-  border: 1px solid #cbd5e1;
-  background: #f8fafc;
-  padding: 15px;
-  border-radius: 6px;
-  text-align: center;
-  overflow: hidden;
-}
 
-.carousel-track {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 380px;
-  width: 100%;
-  overflow: hidden;
-}
+    /* =========================
+       CONTACT
+       ========================= */
 
-.project-image,
-.project-video {
-  display: none;
-  margin: 0 auto;
-  max-width: 100%;
-  max-height: 600px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    .contact-text {
+      max-width: 850px;
+    }
 
-.project-image.active,
-.project-video.active {
-  display: block;
-}
+    .contact-email {
+      margin-top: 18px;
+    }
 
-/* Keep videos contained within the carousel */
-video.project-video {
-  width: 100%;
-  max-width: 850px;
-  max-height: 600px;
-  height: auto;
-  object-fit: contain;
-  background: #000;
-}
 
-/* Keep images from becoming too large */
-img.project-image {
-  max-width: 100%;
-  max-height: 600px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
+    /* =========================
+       FOOTER
+       ========================= */
 
-.project-image:hover,
-.project-video:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transform: scale(1.01);
-}
-
-.carousel-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-.carousel-btn {
-  background: #475569;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 3px;
-  transition: background 0.2s ease;
-}
-
-.carousel-btn:hover {
-  background: #334155;
-}
-
-.carousel-counter {
-  font-size: 13px;
-  color: #64748b;
-}
-
-.thumbnail-strip {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  justify-content: center;
-  padding-top: 8px;
-  border-top: 1px solid #cbd5e1;
-}
-
-.thumb-img,
-.thumb-video-placeholder {
-  width: 55px;
-  height: 55px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 3px;
-  opacity: 0.6;
-  transition: opacity 0.2s ease, border-color 0.2s ease;
-  flex-shrink: 0;
-}
-
-.thumb-video-placeholder {
-  background: #475569;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.thumb-img:hover,
-.thumb-video-placeholder:hover {
-  opacity: 0.9;
-}
-
-.thumb-img.active-thumb,
-.thumb-video-placeholder.active-thumb {
-  border-color: #475569;
-  opacity: 1;
-}
-
-    /* Footer */
     footer {
       max-width: 1400px;
       margin: 40px auto 25px;
@@ -436,7 +574,11 @@ img.project-image {
       border-radius: 8px;
     }
 
-    /* Lightbox */
+
+    /* =========================
+       LIGHTBOX
+       ========================= */
+
     #lightbox-modal {
       display: none;
       position: fixed;
@@ -452,8 +594,8 @@ img.project-image {
     }
 
     #lightbox-content {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 95%;
+      max-height: 95%;
       background: #fff;
       padding: 20px;
       border-radius: 4px;
@@ -479,22 +621,35 @@ img.project-image {
       font-weight: bold;
       color: #64748b;
       cursor: pointer;
+      z-index: 2;
     }
 
     #lightbox-close:hover {
       color: #0f172a;
     }
 
-    /* Mobile */
+
+    /* =========================
+       MOBILE
+       ========================= */
+
     @media (max-width: 800px) {
 
       .hero {
         margin: 15px;
-        padding: 40px 20px;
+        padding: 40px 25px;
       }
 
-      .hero h1 {
+      .hero-content h1 {
         font-size: 34px;
+      }
+
+      .hero-title {
+        font-size: 18px;
+      }
+
+      .hero-description {
+        font-size: 16px;
       }
 
       .nav {
@@ -507,6 +662,7 @@ img.project-image {
 
       nav a {
         margin: 0 18px 0 0;
+        display: inline-block;
       }
 
       .about-content {
@@ -514,11 +670,20 @@ img.project-image {
       }
 
       .about-pic-container {
-        max-width: 240px;
+        width: 300px;
+        max-width: 100%;
         margin: 0 auto;
       }
 
-      .interests,
+      .experience-header {
+        display: block;
+      }
+
+      .experience-date {
+        display: block;
+        margin-top: 3px;
+      }
+
       .skills {
         grid-template-columns: 1fr;
       }
@@ -527,544 +692,799 @@ img.project-image {
         padding: 30px 20px;
         margin: 15px;
       }
+
+      .carousel-track {
+        min-height: 300px;
+      }
+
+      .project-image,
+      .project-video {
+        max-height: 500px;
+      }
+
+      video.project-video {
+        max-height: 500px;
+      }
+
+      .thumbnail-strip {
+        justify-content: flex-start;
+      }
     }
+
   </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
 <header>
+
   <div class="nav">
-    <div class="name">Nathaniel Billig</div>
+
+    <div class="name">
+      Nathaniel Billig
+    </div>
 
     <nav>
       <a href="#about">About</a>
       <a href="#education">Education</a>
-      <a href="#projects">Projects and Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#research">Research</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </div>
+
 </header>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+     ========================= -->
+
 <div class="hero">
 
   <div class="hero-content">
 
-    <h1>Nathaniel Billig</h1>
+    <h1>
+      Nathaniel Billig
+    </h1>
 
     <p class="hero-title">
-      Electrical Engineering Graduate Student | Robotics | Embedded Systems
+      Electrical Engineering Graduate Student
     </p>
 
     <p class="hero-description">
-      Designing and developing robotic and electromechanical systems with a focus
-      on embedded systems, sensor integration, and CAD.
+      Embedded systems · Sensor integration · Robotics · Electromechanical design
     </p>
 
     <div class="links">
-      <a href="YOUR_RESUME_URL.pdf">Resume</a>
-      <a href="https://github.com/nbillig">GitHub</a>
-      <a href="https://www.linkedin.com/in/nathaniel-billig-73a5a1299/">LinkedIn</a>
+
+      <a href="YOUR_RESUME_URL.pdf">
+        Resume
+      </a>
+
+      <a href="https://github.com/nbillig">
+        GitHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/nathaniel-billig-73a5a1299/">
+        LinkedIn
+      </a>
+
     </div>
 
   </div>
 
 </div>
+
 
 
 <main>
 
 
-  <!-- ABOUT -->
-  <section id="about">
+<!-- =========================
+     ABOUT
+     ========================= -->
 
-    <h2>About Me</h2>
+<section id="about">
 
-    <div class="about-content">
+  <h2>
+    About Me
+  </h2>
 
-      <div class="about-pic-container">
-        <img src="Images/Nasa.jpeg" alt="Nathaniel Billig">
-      </div>
+  <div class="about-content">
 
-      <div class="about-text">
+    <div class="about-pic-container">
 
-        <p>
-          I am an electrical engineering graduate student at the University of
-          Wyoming, where I also earned my B.S. in Computer Engineering. My
-          primary interests are embedded systems, sensor integration, and CAD,
-          with a broader interest in robotics and the development of
-          electromechanical systems.
-        </p>
-
-        <p>
-          As part of my graduate research, I have spent the past few years
-          working on a USSF sponsored project focused on the design and
-          development of an underactuated robotic gripper for non-cooperative
-          objects. Working on the project from the initial concepts and
-          prototypes through continued development has given me experience
-          across mechanical design, embedded programming, sensor selection and
-          integration, electronics, and experimental testing.
-        </p>
-
-        <p>
-          I particularly enjoy hands-on projects that combine these areas,
-          especially designing a system in CAD, developing the embedded
-          software and electronics needed to operate it, and integrating
-          sensors to make the system work reliably. I am especially interested
-          in opportunities involving aerospace and space robotics, while also
-          being interested in medical robotics and other applications of
-          intelligent robotic systems.
-        </p>
-
-      </div>
+      <img
+        src="Images/Nasa.jpeg"
+        alt="Nathaniel Billig at Johnson Space Center"
+      >
 
     </div>
 
-  </section>
+
+    <div class="about-text">
+
+      <p>
+        I am an electrical engineering graduate student at the University of
+        Wyoming, where I also earned my B.S. in Computer Engineering. My
+        primary interests are embedded systems, sensor integration, and CAD,
+        with a broader interest in robotics and the development of
+        electromechanical systems.
+      </p>
+
+      <p>
+        As part of my graduate research, I have spent the past few years
+        working on a USSF-sponsored project focused on the design and
+        development of an underactuated robotic gripper for non-cooperative
+        objects. Working on the project from the initial concepts and
+        prototypes through continued development has given me experience
+        across mechanical design, embedded programming, sensor selection and
+        integration, electronics, and experimental testing.
+      </p>
+
+      <p>
+        I particularly enjoy hands-on projects that combine these areas,
+        especially designing a system in CAD, developing the embedded
+        software and electronics needed to operate it, and integrating
+        sensors to make the system work reliably. I am especially interested
+        in opportunities involving aerospace and space robotics, while also
+        being interested in medical robotics and other applications of
+        intelligent robotic systems.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-  <!-- EDUCATION -->
-  <section id="education">
 
-    <h2>Education</h2>
+<!-- =========================
+     EDUCATION
+     ========================= -->
 
-    <div class="education-entry">
+<section id="education">
 
-      <div class="education-degree">
-        M.S. Electrical Engineering
+  <h2>
+    Education
+  </h2>
+
+
+  <div class="education-entry">
+
+    <div class="education-degree">
+      M.S. Electrical Engineering
+    </div>
+
+    <div class="education-school">
+      University of Wyoming
+    </div>
+
+    <div class="education-details">
+      Graduate GPA: 3.9 / 4.0 · Focus: Robotics and Embedded Systems
+    </div>
+
+  </div>
+
+
+  <div class="education-entry">
+
+    <div class="education-degree">
+      B.S. Computer Engineering
+    </div>
+
+    <div class="education-school">
+      University of Wyoming
+    </div>
+
+    <div class="education-details">
+      GPA: 3.8 / 4.0 · Minor in Mathematics
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+     ========================= -->
+
+<section id="experience">
+
+  <h2>
+    Experience
+  </h2>
+
+
+  <div class="experience-entry">
+
+    <div class="experience-header">
+
+      <div class="experience-title">
+        Graduate Research Assistant
       </div>
 
-      <div class="education-school">
+      <div class="experience-date">
         University of Wyoming
       </div>
 
-      <div class="education-details">
-        Graduate GPA: 3.9 / 4.0 · Focus: Robotics and Embedded Systems
-      </div>
-
     </div>
 
+    <div class="experience-organization">
+      Robotics and Embedded Systems Research
+    </div>
 
-    <div class="education-entry">
+    <p>
+      Research and development of robotic and electromechanical systems with
+      an emphasis on embedded control, sensor integration, mechanical design,
+      simulation, and experimental testing. Responsibilities have included
+      developing hardware and software from initial concepts through physical
+      prototypes and testing.
+    </p>
 
-      <div class="education-degree">
-        B.S. Computer Engineering
+  </div>
+
+
+  <div class="experience-entry">
+
+    <div class="experience-header">
+
+      <div class="experience-title">
+        Teaching Assistant — Physical Computing
       </div>
 
-      <div class="education-school">
+      <div class="experience-date">
         University of Wyoming
       </div>
 
-      <div class="education-details">
-        GPA: 3.8 / 4.0 · Minor in Mathematics
+    </div>
+
+    <div class="experience-organization">
+      Electrical and Computer Engineering
+    </div>
+
+    <p>
+      Assisted students with physical computing projects involving
+      microcontrollers, electronics, sensors, embedded programming, and
+      hardware/software integration.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+     ========================= -->
+
+<section id="projects">
+
+  <h2>
+    Projects
+  </h2>
+
+
+  <!-- =========================
+       GRIPPER
+       ========================= -->
+
+  <div class="project project-featured">
+
+    <div class="featured-label">
+      Featured Project
+    </div>
+
+    <h3>
+      Soft Adaptive Robotic Gripper
+    </h3>
+
+    <p>
+      Designed and developed a tendon-driven, underactuated robotic gripper
+      for grasping objects in challenging and remote environments. Developed
+      the mechanical system from the initial concept through multiple design
+      iterations, including finger geometry, flexure joints, tendon
+      actuation, and integrated mechanical components. The three-finger
+      architecture uses independent motor actuation and underactuated joints
+      to accommodate small errors in object pose during grasping.
+    </p>
+
+    <p>
+      The system integrates an ESP32-based controller, custom PCB electronics,
+      Hall-effect joint-angle sensing, motor encoders, and load cells for
+      tendon tension measurement. Mechanical and electrical design decisions
+      were iterated through physical testing and experimental evaluation.
+    </p>
+
+    <div class="tags">
+      CAD · PCB Design · ESP32 · Embedded C/C++ · Hall Sensors · Load Cells ·
+      Encoders · Robotics · MATLAB · Simscape
+    </div>
+
+
+
+    <!-- GRIPPER CAROUSEL -->
+
+    <div class="image-carousel">
+
+      <div class="carousel-track">
+
+        <!-- 1. Gripper Video -->
+
+        <video
+          class="project-video active"
+          controls
+          muted
+          loop
+          preload="metadata"
+        >
+
+          <source
+            src="Images/GripperVideo.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not support the video tag.
+
+        </video>
+
+
+        <!-- 2. Gripper Poster -->
+
+        <img
+          class="project-image"
+          src="Images/GripperPoster.jpg"
+          alt="Gripper project poster"
+        >
+
+
+        <!-- 3. Single Finger Assembly -->
+
+        <img
+          class="project-image"
+          src="Images/SingleFingerAssembly.png"
+          alt="CAD model of a single finger of the adaptive gripper"
+        >
+
+
+        <!-- 4. Power Supply Schematic -->
+
+        <img
+          class="project-image"
+          src="Images/D24Schem.png"
+          alt="Power supply schematic"
+        >
+
+
+        <!-- 5. Motor Driver Schematic -->
+
+        <img
+          class="project-image"
+          src="Images/DRVschem.png"
+          alt="Motor driver schematic"
+        >
+
+
+        <!-- 6. Load Cell Schematic -->
+
+        <img
+          class="project-image"
+          src="Images/HXSchem.png"
+          alt="Load cell schematic"
+        >
+
+
+        <!-- 7. Sensor Multiplexer Schematic -->
+
+        <img
+          class="project-image"
+          src="Images/MuxSchem.png"
+          alt="Sensor multiplexer schematic"
+        >
+
+
+        <!-- 8. Main Gripper Schematic -->
+
+        <img
+          class="project-image"
+          src="Images/mainSchem.png"
+          alt="Main gripper schematic"
+        >
+
+
+        <!-- 9. Gripper PCB -->
+
+        <img
+          class="project-image"
+          src="Images/PCB.png"
+          alt="Gripper PCB"
+        >
+
+      </div>
+
+
+
+      <div class="carousel-nav">
+
+        <button class="carousel-btn prev-btn">
+          &#10094; Prev
+        </button>
+
+        <span class="carousel-counter">
+          1 / 9
+        </span>
+
+        <button class="carousel-btn next-btn">
+          Next &#10095;
+        </button>
+
+      </div>
+
+
+
+      <div class="thumbnail-strip">
+
+        <div
+          class="thumb-video-placeholder active-thumb"
+          data-index="0"
+        >
+          Video
+        </div>
+
+
+        <img
+          class="thumb-img"
+          src="Images/GripperPoster.jpg"
+          alt="Gripper poster thumbnail"
+          data-index="1"
+        >
+
+
+        <img
+          class="thumb-img"
+          src="Images/SingleFingerAssembly.png"
+          alt="Single finger assembly thumbnail"
+          data-index="2"
+        >
+
+
+        <img
+          class="thumb-img"
+          src="Images/D24Schem.png"
+          alt="Power supply schematic thumbnail"
+          data-index="3"
+        >
+
+
+        <img
+          class="thumb-img"
+          src="Images/DRVschem.png"
+          alt="Motor driver schematic thumbnail"
+          data-index="4"
+        >
+
+
+        <img
+          class="thumb-img"
+          src="Images/HXSchem.png"
+          alt="Load cell schematic thumbnail"
+          data-index="5"
+        >
+
+
+        <img
+          class="thumb-img"
+          src="Images/MuxSchem.png"
+          alt="Sensor multiplexer schematic thumbnail"
+          data-index="6"
+        >
+
+
+        <img
+          class="thumb-img"
+          src="Images/mainSchem.png"
+          alt="Main gripper schematic thumbnail"
+          data-index="7"
+        >
+
+
+        <img
+          class="thumb-img"
+          src="Images/PCB.png"
+          alt="Gripper PCB thumbnail"
+          data-index="8"
+        >
+
       </div>
 
     </div>
-
-  </section>
-
-
-  <!-- AREAS OF INTEREST -->
-  <section id="interests">
-
-    <h2>Areas of Interest</h2>
-
-    <div class="interests">
-
-      <div class="interest-group">
-        <h3>Embedded Systems</h3>
-        <p>
-          Microcontrollers, firmware, real-time systems, and hardware/software
-          integration.
-        </p>
-      </div>
-
-      <div class="interest-group">
-        <h3>Sensor Integration</h3>
-        <p>
-          Sensor selection, electrical interfaces, calibration, data
-          acquisition, and physical integration.
-        </p>
-      </div>
-
-      <div class="interest-group">
-        <h3>Robotics</h3>
-        <p>
-          Robotic manipulation, sensing, actuators, kinematics, and
-          electromechanical systems.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PROJECTS -->
-  <section id="projects">
-
-    <h2>Projects and Research</h2>
-
-
-    <!-- GRIPPER -->
-    <div class="project">
-
-      <h3>Soft Adaptive Robotic Gripper</h3>
-
-      <p>
-        Designed and developed a tendon-driven, underactuated robotic gripper
-        for grasping objects in challenging and remote environments. Developed
-        the mechanical system from the initial concept through multiple design
-        iterations, including finger geometry, flexure joints, tendon
-        actuation, and integrated mechanical components. Designed the
-        three-finger architecture with independent motor actuation and
-        underactuated joints to accommodate small errors in object pose during
-        grasping.
-      </p>
-
-      <div class="tags">
-        CAD · PCB Design · Embedded Systems · Sensor Integration · Robotics ·
-        Kinematic/Dynamic Modeling · Simulation
-      </div>
-
-
-<div class="image-carousel">
-
-  <div class="carousel-track">
-
-    <!-- 1. Gripper Video -->
-    <video class="project-video active"
-           controls
-           muted
-           loop
-           preload="metadata">
-      <source src="Images/GripperVideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <!-- 2. Gripper Poster -->
-    <img class="project-image"
-         src="Images/GripperPoster.jpg"
-         alt="Gripper project poster">
-
-    <!-- 3. Single Finger Assembly -->
-    <img class="project-image"
-         src="Images/SingleFingerAssembly.png"
-         alt="CAD model of a single finger of the adaptive gripper">
-
-    <!-- 4. Power Supply Schematic -->
-    <img class="project-image"
-         src="Images/D24Schem.png"
-         alt="Power supply schematic">
-
-    <!-- 5. Motor Driver Schematic -->
-    <img class="project-image"
-         src="Images/DRVschem.png"
-         alt="Motor driver schematic">
-
-    <!-- 6. Load Cell Schematic -->
-    <img class="project-image"
-         src="Images/HXSchem.png"
-         alt="Load cell schematic">
-
-    <!-- 7. Sensor Multiplexer Schematic -->
-    <img class="project-image"
-         src="Images/MuxSchem.png"
-         alt="Sensor multiplexer schematic">
-
-    <!-- 8. Main Gripper Schematic -->
-    <img class="project-image"
-         src="Images/mainSchem.png"
-         alt="Main gripper schematic">
-
-    <!-- 9. Gripper PCB -->
-    <img class="project-image"
-         src="Images/PCB.png"
-         alt="Gripper PCB">
 
   </div>
 
 
-  <div class="carousel-nav">
 
-    <button class="carousel-btn prev-btn">
-      &#10094; Prev
-    </button>
+  <!-- =========================
+       HALL EFFECT
+       ========================= -->
 
-    <span class="carousel-counter">
-      1 / 9
-    </span>
+  <div class="project">
 
-    <button class="carousel-btn next-btn">
-      Next &#10095;
-    </button>
+    <h3>
+      Hall-Effect Sensor Live Integration
+    </h3>
 
-  </div>
+    <p>
+      Designed and integrated a Hall-effect sensing system for real-time
+      finger joint-angle feedback. Developed the sensor and magnet
+      configuration, integrated the components directly into the mechanical
+      joints, and designed custom PCB electronics and embedded software for
+      data acquisition. Iterated on sensor placement and mechanical packaging
+      to achieve usable and repeatable measurements within the limited space
+      of the gripper.
+    </p>
 
-
-  <div class="thumbnail-strip">
-
-  <!-- 1. Video -->
-  <div class="thumb-video-placeholder active-thumb"
-       data-index="0">
-    Video
-  </div>
-
-  <!-- 2. Poster -->
-  <img class="thumb-img"
-       src="Images/GripperPoster.jpg"
-       alt="Gripper poster thumbnail"
-       data-index="1">
-
-  <!-- 3. Single Finger Assembly -->
-  <img class="thumb-img"
-       src="Images/SingleFingerAssembly.png"
-       alt="Single finger assembly thumbnail"
-       data-index="2">
-
-  <!-- 4. Power Supply Schematic -->
-  <img class="thumb-img"
-       src="Images/D24Schem.png"
-       alt="Power supply schematic thumbnail"
-       data-index="3">
-
-  <!-- 5. Motor Driver Schematic -->
-  <img class="thumb-img"
-       src="Images/DRVschem.png"
-       alt="Motor driver schematic thumbnail"
-       data-index="4">
-
-  <!-- 6. Load Cell Schematic -->
-  <img class="thumb-img"
-       src="Images/HXSchem.png"
-       alt="Load cell schematic thumbnail"
-       data-index="5">
-
-  <!-- 7. Sensor Multiplexer Schematic -->
-  <img class="thumb-img"
-       src="Images/MuxSchem.png"
-       alt="Sensor multiplexer schematic thumbnail"
-       data-index="6">
-
-  <!-- 8. Main Gripper Schematic -->
-  <img class="thumb-img"
-       src="Images/mainSchem.png"
-       alt="Main gripper schematic thumbnail"
-       data-index="7">
-
-  <!-- 9. Gripper PCB -->
-  <img class="thumb-img"
-       src="Images/PCB.png"
-       alt="Gripper PCB thumbnail"
-       data-index="8">
-
-</div>
-
-</div>
+    <div class="tags">
+      ESP32 · Hall Sensors · Calibration · Real-Time Data · Embedded Systems
+    </div>
 
 
-    <!-- HALL EFFECT -->
-    <div class="project">
 
-      <h3>Hall-Effect Sensor Live Integration</h3>
+    <div class="image-carousel">
 
-      <p>
-        Designed and integrated a Hall-effect sensing system for real-time
-        finger joint-angle feedback. Developed the sensor and magnet
-        configuration, integrated the components directly into the mechanical
-        joints, and designed custom PCB electronics and embedded software for
-        data acquisition. Iterated on sensor placement and mechanical packaging
-        to achieve usable and repeatable measurements within the limited space
-        of the gripper.
-      </p>
+      <div class="carousel-track">
 
-      <div class="tags">
-        ESP32 · Hall Sensors · Calibration · Real-Time Data
+        <video
+          class="project-video active"
+          controls
+          muted
+          loop
+        >
+
+          <source
+            src="Images/HE_Proto_demo.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not support the video tag.
+
+        </video>
+
+
+        <img
+          class="project-image"
+          src="Images/SensorLocation.png"
+          alt="Location of sensor and magnet"
+        >
+
+
+        <img
+          class="project-image"
+          src="Images/HERepeatability.png"
+          alt="Repeatability of Hall-effect sensor"
+        >
+
+
+        <img
+          class="project-image"
+          src="Images/HECalibration.png"
+          alt="Hall-effect sensor calibration"
+        >
+
       </div>
 
 
-      <div class="image-carousel">
 
-        <div class="carousel-track">
+      <div class="carousel-nav">
 
-          <video class="project-video active" controls muted loop>
-            <source src="Images/HE_Proto_demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <button class="carousel-btn prev-btn">
+          &#10094; Prev
+        </button>
 
-          <img class="project-image"
-               src="Images/SensorLocation.png"
-               alt="Location of sensor and magnet">
+        <span class="carousel-counter">
+          1 / 4
+        </span>
 
-          <img class="project-image"
-               src="Images/HERepeatability.png"
-               alt="Repeatability of Hall-effect sensor">
+        <button class="carousel-btn next-btn">
+          Next &#10095;
+        </button>
 
-          <img class="project-image"
-               src="Images/HECalibration.png"
-               alt="Hall-effect sensor calibration">
+      </div>
 
+
+
+      <div class="thumbnail-strip">
+
+        <div
+          class="thumb-video-placeholder active-thumb"
+          data-index="0"
+        >
+          Video
         </div>
 
 
-        <div class="carousel-nav">
-
-          <button class="carousel-btn prev-btn">
-            &#10094; Prev
-          </button>
-
-          <span class="carousel-counter">
-            1 / 4
-          </span>
-
-          <button class="carousel-btn next-btn">
-            Next &#10095;
-          </button>
-
-        </div>
+        <img
+          class="thumb-img"
+          src="Images/SensorLocation.png"
+          alt="Sensor location thumbnail"
+          data-index="1"
+        >
 
 
-        <div class="thumbnail-strip">
+        <img
+          class="thumb-img"
+          src="Images/HERepeatability.png"
+          alt="Hall-effect repeatability thumbnail"
+          data-index="2"
+        >
 
-          <div class="thumb-video-placeholder active-thumb"
-               data-index="0">
-            Video
-          </div>
 
-          <img class="thumb-img"
-               src="Images/SensorLocation.png"
-               alt="Thumbnail 2"
-               data-index="1">
-
-          <img class="thumb-img"
-               src="Images/HERepeatability.png"
-               alt="Thumbnail 3"
-               data-index="2">
-
-          <img class="thumb-img"
-               src="Images/HECalibration.png"
-               alt="Thumbnail 4"
-               data-index="3">
-
-        </div>
+        <img
+          class="thumb-img"
+          src="Images/HECalibration.png"
+          alt="Hall-effect calibration thumbnail"
+          data-index="3"
+        >
 
       </div>
 
     </div>
 
+  </div>
 
-    <!-- CONTACT FORCE -->
-    <div class="project">
 
-      <h3>Contact Force Simulation</h3>
 
-      <p>
-        Developed a simulation model to reproduce the observed kinematic
-        behavior of the physical gripper and evaluate its motion during
-        grasping. The model was used to compare simulated and experimental
-        joint movements while estimating contact forces at the finger contact
-        pads based on the simulated configuration.
-      </p>
+  <!-- =========================
+       CONTACT FORCE
+       ========================= -->
 
-      <div class="tags">
-        MATLAB · Simscape · Robotics · Contact Modeling
+  <div class="project">
+
+    <h3>
+      Contact Force Simulation
+    </h3>
+
+    <p>
+      Developed a simulation model to reproduce the observed kinematic
+      behavior of the physical gripper and evaluate its motion during
+      grasping. The model was used to compare simulated and experimental
+      joint movements while estimating contact forces at the finger contact
+      pads based on the simulated configuration.
+    </p>
+
+    <div class="tags">
+      MATLAB · Simscape · Robotics · Contact Modeling
+    </div>
+
+
+
+    <div class="image-carousel">
+
+      <div class="carousel-track">
+
+        <video
+          class="project-video active"
+          controls
+          muted
+          loop
+        >
+
+          <source
+            src="Images/SimulationGripper.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not support the video tag.
+
+        </video>
+
+
+        <img
+          class="project-image"
+          src="Images/Simulation_vs_Measured_Results_Comparison.jpg"
+          alt="Comparison of simulated and measured contact forces"
+        >
+
       </div>
 
 
-      <div class="image-carousel">
 
-        <div class="carousel-track">
+      <div class="carousel-nav">
 
-          <video class="project-video active" controls muted loop>
-            <source src="Images/SimulationGripper.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <button class="carousel-btn prev-btn">
+          &#10094; Prev
+        </button>
 
-          <img class="project-image"
-               src="Images/Simulation_vs_Measured_Results_Comparison.jpg"
-               alt="Comparison of simulated and measured contact forces">
+        <span class="carousel-counter">
+          1 / 2
+        </span>
 
+        <button class="carousel-btn next-btn">
+          Next &#10095;
+        </button>
+
+      </div>
+
+
+
+      <div class="thumbnail-strip">
+
+        <div
+          class="thumb-video-placeholder active-thumb"
+          data-index="0"
+        >
+          Video
         </div>
 
 
-        <div class="carousel-nav">
-
-          <button class="carousel-btn prev-btn">
-            &#10094; Prev
-          </button>
-
-          <span class="carousel-counter">
-            1 / 2
-          </span>
-
-          <button class="carousel-btn next-btn">
-            Next &#10095;
-          </button>
-
-        </div>
-
-
-        <div class="thumbnail-strip">
-
-          <div class="thumb-video-placeholder active-thumb"
-               data-index="0">
-            Video
-          </div>
-
-          <img class="thumb-img"
-               src="Images/Simulation_vs_Measured_Results_Comparison.jpg"
-               alt="Thumbnail 2"
-               data-index="1">
-
-        </div>
+        <img
+          class="thumb-img"
+          src="Images/Simulation_vs_Measured_Results_Comparison.jpg"
+          alt="Simulation comparison thumbnail"
+          data-index="1"
+        >
 
       </div>
 
     </div>
 
-
-    <!-- DIGITAL TWIN -->
-    <div class="project">
-
-      <h3>Digital Twin Recreation</h3>
-
-      <p>
-        Recreated the physical gripper as a digital model to represent its
-        mechanical structure and motion in simulation. Developed the digital
-        representation to support visualization, system analysis, and
-        comparison between the physical prototype and its simulated behavior.
-      </p>
-
-      <div class="tags">
-        MATLAB · Simscape · Robotics · System Modeling
-      </div>
+  </div>
 
 
-      <div style="
-        margin-top: 18px;
-        border: 1px solid #cbd5e1;
-        background: #f8fafc;
-        padding: 15px;
-        border-radius: 6px;
-        text-align: center;
-      ">
 
-        <video class="project-video active"
-               controls
-               muted
-               loop
-               style="
-                 display: block;
-                 max-height: 600px;
-                 margin: 0 auto;
-               ">
+  <!-- =========================
+       DIGITAL TWIN
+       ========================= -->
 
-          <source src="Images/DigitalTwinTest.mp4"
-                  type="video/mp4">
+  <div class="project">
+
+    <h3>
+      Digital Twin Recreation
+    </h3>
+
+    <p>
+      Recreated the physical gripper as a digital model to represent its
+      mechanical structure and motion in simulation. Developed the digital
+      representation to support visualization, system analysis, and comparison
+      between the physical prototype and its simulated behavior.
+    </p>
+
+    <div class="tags">
+      MATLAB · Simscape · Robotics · System Modeling
+    </div>
+
+
+
+    <div class="image-carousel">
+
+      <div class="carousel-track">
+
+        <video
+          class="project-video active"
+          controls
+          muted
+          loop
+          preload="metadata"
+        >
+
+          <source
+            src="Images/DigitalTwinTest.mp4"
+            type="video/mp4"
+          >
 
           Your browser does not support the video tag.
 
@@ -1074,128 +1494,162 @@ img.project-image {
 
     </div>
 
+  </div>
 
-    <!-- Q LEARNING -->
-    <div class="project">
 
-      <h3>Multi-Agent Continuum Arm Q-Learning</h3>
 
-      <p>
-        Implemented a multi-agent reinforcement learning approach for
-        coordinated control of a continuum arm. The project explored state
-        discretization, Q-learning, and coordinated actuator behavior.
-      </p>
+  <!-- =========================
+       Q LEARNING
+       ========================= -->
 
-      <div class="tags">
-        Python · Q-Learning · Reinforcement Learning · Robotics
+  <div class="project">
+
+    <h3>
+      Multi-Agent Continuum Arm Q-Learning
+    </h3>
+
+    <p>
+      Implemented a multi-agent reinforcement learning approach for
+      coordinated control of a continuum arm. The project explored state
+      discretization, Q-learning, and coordinated actuator behavior.
+    </p>
+
+    <div class="tags">
+      Python · Q-Learning · Reinforcement Learning · Robotics
+    </div>
+
+
+
+    <div class="image-carousel">
+
+      <div class="carousel-track">
+
+        <img
+          class="project-image active"
+          src="Images/FullyLearned.gif"
+          alt="Fully learned state"
+        >
+
+
+        <img
+          class="project-image"
+          src="Images/PartiallyLearned.gif"
+          alt="Partially learned Q-table"
+        >
+
+
+        <img
+          class="project-image"
+          src="Images/FirstEpisode.gif"
+          alt="First episode"
+        >
+
+
+        <img
+          class="project-image"
+          src="Images/JointActionIndependentState.png"
+          alt="Joint action independent states"
+        >
+
       </div>
 
 
-      <div class="image-carousel">
 
-        <div class="carousel-track">
+      <div class="carousel-nav">
 
-          <img class="project-image active"
-               src="Images/FullyLearned.gif"
-               alt="Fully learned state">
+        <button class="carousel-btn prev-btn">
+          &#10094; Prev
+        </button>
 
-          <img class="project-image"
-               src="Images/PartiallyLearned.gif"
-               alt="Partially learned Q-table">
+        <span class="carousel-counter">
+          1 / 4
+        </span>
 
-          <img class="project-image"
-               src="Images/FirstEpisode.gif"
-               alt="First episode">
+        <button class="carousel-btn next-btn">
+          Next &#10095;
+        </button>
 
-          <img class="project-image"
-               src="Images/JointActionIndependentState.png"
-               alt="Joint action independent states">
-
-        </div>
+      </div>
 
 
-        <div class="carousel-nav">
 
-          <button class="carousel-btn prev-btn">
-            &#10094; Prev
-          </button>
+      <div class="thumbnail-strip">
 
-          <span class="carousel-counter">
-            1 / 4
-          </span>
-
-          <button class="carousel-btn next-btn">
-            Next &#10095;
-          </button>
-
-        </div>
+        <img
+          class="thumb-img active-thumb"
+          src="Images/FullyLearned.gif"
+          alt="Fully learned state thumbnail"
+          data-index="0"
+        >
 
 
-        <div class="thumbnail-strip">
+        <img
+          class="thumb-img"
+          src="Images/PartiallyLearned.gif"
+          alt="Partially learned Q-table thumbnail"
+          data-index="1"
+        >
 
-          <img class="thumb-img active-thumb"
-               src="Images/FullyLearned.gif"
-               alt="Thumbnail 1"
-               data-index="0">
 
-          <img class="thumb-img"
-               src="Images/PartiallyLearned.gif"
-               alt="Thumbnail 2"
-               data-index="1">
+        <img
+          class="thumb-img"
+          src="Images/FirstEpisode.gif"
+          alt="First episode thumbnail"
+          data-index="2"
+        >
 
-          <img class="thumb-img"
-               src="Images/FirstEpisode.gif"
-               alt="Thumbnail 3"
-               data-index="2">
 
-          <img class="thumb-img"
-               src="Images/JointActionIndependentState.png"
-               alt="Thumbnail 4"
-               data-index="3">
-
-        </div>
+        <img
+          class="thumb-img"
+          src="Images/JointActionIndependentState.png"
+          alt="Joint action independent states thumbnail"
+          data-index="3"
+        >
 
       </div>
 
     </div>
 
-
-    <!-- COBOT -->
-    <div class="project">
-
-      <h3>Cobot Path Planning</h3>
-
-      <p>
-        Developed a path planning algorithm for a drone swarm and evaluated
-        the resulting motion through simulation.
-      </p>
-
-      <div class="tags">
-        Robotics · Path Planning · Simulation
-      </div>
+  </div>
 
 
-      <div style="
-        margin-top: 18px;
-        border: 1px solid #cbd5e1;
-        background: #f8fafc;
-        padding: 15px;
-        border-radius: 6px;
-        text-align: center;
-      ">
 
-        <video class="project-video active"
-               controls
-               muted
-               loop
-               style="
-                 display: block;
-                 max-height: 600px;
-                 margin: 0 auto;
-               ">
+  <!-- =========================
+       COBOT
+       ========================= -->
 
-          <source src="Images/flock.mp4"
-                  type="video/mp4">
+  <div class="project">
+
+    <h3>
+      Cobot Path Planning
+    </h3>
+
+    <p>
+      Developed a path planning algorithm for a drone swarm and evaluated
+      the resulting motion through simulation.
+    </p>
+
+    <div class="tags">
+      Robotics · Path Planning · Simulation
+    </div>
+
+
+
+    <div class="image-carousel">
+
+      <div class="carousel-track">
+
+        <video
+          class="project-video active"
+          controls
+          muted
+          loop
+        >
+
+          <source
+            src="Images/flock.mp4"
+            type="video/mp4"
+          >
 
           Your browser does not support the video tag.
 
@@ -1205,140 +1659,212 @@ img.project-image {
 
     </div>
 
+  </div>
 
-    <!-- SNAD -->
-    <div class="project">
 
-      <h3>SNAD — Tripping Hazard Detection</h3>
 
-      <p>
-        Senior design project using a Raspberry Pi 4 and camera to provide
-        real-time computer vision assistance. A convolutional neural network
-        classified whether a scene contained a potential tripping hazard and
-        alerted the user when one was detected.
-      </p>
+  <!-- =========================
+       SNAD
+       ========================= -->
 
-      <div class="tags">
-        Raspberry Pi 4 · CNN · Computer Vision · Python · Embedded Systems
+  <div class="project">
+
+    <h3>
+      SNAD — Tripping Hazard Detection
+    </h3>
+
+    <p>
+      Senior design project using a Raspberry Pi 4 and camera to provide
+      real-time computer vision assistance. A convolutional neural network
+      classified whether a scene contained a potential tripping hazard and
+      alerted the user when one was detected.
+    </p>
+
+    <div class="tags">
+      Raspberry Pi 4 · CNN · Computer Vision · Python · Embedded Systems
+    </div>
+
+
+
+    <div class="image-carousel">
+
+      <div class="carousel-track">
+
+        <img
+          class="project-image active"
+          src="Images/SNAD_Poster-1.png"
+          alt="SNAD Project Poster"
+        >
+
       </div>
 
 
-      <div class="image-carousel">
 
-        <div class="carousel-track">
+      <div class="thumbnail-strip">
 
-          <img class="project-image active"
-               src="Images/SNAD_Poster-1.png"
-               alt="SNAD Project Poster">
-
-        </div>
-
-
-        <div class="thumbnail-strip">
-
-          <img class="thumb-img active-thumb"
-               src="Images/SNAD_Poster-1.png"
-               alt="Thumbnail 1"
-               data-index="0">
-
-        </div>
+        <img
+          class="thumb-img active-thumb"
+          src="Images/SNAD_Poster-1.png"
+          alt="SNAD project poster thumbnail"
+          data-index="0"
+        >
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- RESEARCH -->
-  <section id="research">
 
-    <h2>Research</h2>
+<!-- =========================
+     RESEARCH
+     ========================= -->
 
-    <div class="project">
+<section id="research">
+
+  <h2>
+    Research
+  </h2>
+
+  <div class="research-entry">
+
+    <h3>
+      Underactuated Robotic Grippers for Non-Cooperative Object Grasping
+    </h3>
+
+    <p>
+      Research focused on adaptive grasping for objects that are not fixed
+      to a supporting surface, with emphasis on gripper design, sensing,
+      simulation, and experimental evaluation.
+    </p>
+
+    <div class="research-status">
+      Upcoming at IEEE SMC 2026
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     TECHNICAL SKILLS
+     ========================= -->
+
+<section id="skills">
+
+  <h2>
+    Technical Skills
+  </h2>
+
+
+  <div class="skills">
+
+
+    <div class="skill-group">
 
       <h3>
-        Underactuated Robotic Grippers for Non-Cooperative Object Grasping
+        Embedded Systems
       </h3>
 
       <p>
-        Research focused on adaptive grasping for objects that are not fixed
-        to a supporting surface, with emphasis on gripper design, sensing,
-        simulation, and experimental evaluation.
-      </p>
-
-      <p style="
-        font-size: 14px;
-        font-weight: bold;
-        color: #475569;
-        margin: 5px 0 8px;
-      ">
-        Upcoming at IEEE SMC 2026
+        ESP32 · Raspberry Pi · Microcontrollers · C/C++ · Firmware ·
+        UART · SPI · I²C · Real-Time Data Acquisition
       </p>
 
     </div>
 
-  </section>
 
+    <div class="skill-group">
 
-  <!-- SKILLS -->
-  <section id="skills">
+      <h3>
+        Sensor Integration
+      </h3>
 
-    <h2>Technical Skills</h2>
-
-    <div class="skills">
-
-      <div class="skill-group">
-        <h3>Robotics</h3>
-        <p>
-          Robot arms, grippers, actuators, sensors, path planning
-        </p>
-      </div>
-
-      <div class="skill-group">
-        <h3>Embedded</h3>
-        <p>
-          ESP32, Raspberry Pi, microcontrollers, serial communication
-        </p>
-      </div>
-
-      <div class="skill-group">
-        <h3>Design</h3>
-        <p>
-          CAD, PCB design, electrical schematics, mechanical design
-        </p>
-      </div>
-
-      <div class="skill-group">
-        <h3>Simulation</h3>
-        <p>
-          MATLAB, Simscape, system modeling, digital twins
-        </p>
-      </div>
-
-      <div class="skill-group">
-        <h3>Programming</h3>
-        <p>
-          C/C++, Python, MATLAB
-        </p>
-      </div>
-
-      <div class="skill-group">
-        <h3>Machine Learning</h3>
-        <p>
-          Q-learning, CNNs, computer vision
-        </p>
-      </div>
+      <p>
+        Hall-Effect Sensors · Load Cells · Encoders · Calibration ·
+        Data Acquisition · Signal Conditioning
+      </p>
 
     </div>
 
-  </section>
+
+    <div class="skill-group">
+
+      <h3>
+        Robotics
+      </h3>
+
+      <p>
+        Robot Arms · Grippers · Actuators · Robotic Manipulation ·
+        Kinematics · Path Planning
+      </p>
+
+    </div>
 
 
-  <!-- CONTACT -->
-  <section id="contact">
+    <div class="skill-group">
 
-    <h2>Contact</h2>
+      <h3>
+        Mechanical & Electrical Design
+      </h3>
+
+      <p>
+        CAD · Mechanical Design · PCB Design · Electrical Schematics ·
+        3D Printing · Electromechanical Integration
+      </p>
+
+    </div>
+
+
+    <div class="skill-group">
+
+      <h3>
+        Simulation & Modeling
+      </h3>
+
+      <p>
+        MATLAB · Simscape · System Modeling · Digital Twins ·
+        Kinematic Modeling · Contact Modeling
+      </p>
+
+    </div>
+
+
+    <div class="skill-group">
+
+      <h3>
+        Programming & Machine Learning
+      </h3>
+
+      <p>
+        C/C++ · Python · MATLAB · Q-Learning · CNNs ·
+        Computer Vision · Reinforcement Learning
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+     ========================= -->
+
+<section id="contact">
+
+  <h2>
+    Contact
+  </h2>
+
+  <div class="contact-text">
 
     <p>
       I am interested in opportunities involving embedded systems, sensor
@@ -1346,28 +1872,44 @@ img.project-image {
       in aerospace, space, and medical applications.
     </p>
 
-    <p>
+    <p class="contact-email">
+
       <a href="mailto:Nathaniel.L.Billig@gmail.com">
         Nathaniel.L.Billig@gmail.com
       </a>
+
     </p>
 
-  </section>
+  </div>
+
+</section>
+
 
 </main>
 
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
 
 <footer>
   © 2026 Nathaniel Billig
 </footer>
 
 
-<!-- LIGHTBOX -->
+
+<!-- =========================
+     LIGHTBOX
+     ========================= -->
+
 <div id="lightbox-modal">
 
   <div id="lightbox-content">
 
-    <span id="lightbox-close">&times;</span>
+    <span id="lightbox-close">
+      &times;
+    </span>
 
     <div id="lightbox-body"></div>
 
@@ -1376,113 +1918,137 @@ img.project-image {
 </div>
 
 
+
 <script>
 
-  // Carousel and Thumbnail functionality
 
-  document.querySelectorAll('.image-carousel').forEach(carousel => {
+  /* =========================
+     CAROUSEL FUNCTIONALITY
+     ========================= */
 
-    const items =
-      carousel.querySelectorAll('.project-image, .project-video');
+  document
+    .querySelectorAll('.image-carousel')
+    .forEach(carousel => {
 
-    const thumbnails =
-      carousel.querySelectorAll(
-        '.thumb-img, .thumb-video-placeholder'
-      );
-
-    const prevBtn =
-      carousel.querySelector('.prev-btn');
-
-    const nextBtn =
-      carousel.querySelector('.next-btn');
-
-    const counter =
-      carousel.querySelector('.carousel-counter');
-
-    let currentIndex = 0;
-
-
-    function showItem(index) {
-
-      currentIndex = index;
-
-      items.forEach((item, idx) => {
-
-        item.classList.toggle(
-          'active',
-          idx === currentIndex
+      const items =
+        carousel.querySelectorAll(
+          '.project-image, .project-video'
         );
 
-        if (
-          item.tagName === 'VIDEO' &&
-          idx !== currentIndex
-        ) {
-          item.pause();
+      const thumbnails =
+        carousel.querySelectorAll(
+          '.thumb-img, .thumb-video-placeholder'
+        );
+
+      const prevBtn =
+        carousel.querySelector('.prev-btn');
+
+      const nextBtn =
+        carousel.querySelector('.next-btn');
+
+      const counter =
+        carousel.querySelector('.carousel-counter');
+
+      let currentIndex = 0;
+
+
+      function showItem(index) {
+
+        currentIndex = index;
+
+
+        items.forEach((item, idx) => {
+
+          item.classList.toggle(
+            'active',
+            idx === currentIndex
+          );
+
+
+          if (
+            item.tagName === 'VIDEO' &&
+            idx !== currentIndex
+          ) {
+
+            item.pause();
+
+          }
+
+        });
+
+
+        thumbnails.forEach((thumb, idx) => {
+
+          thumb.classList.toggle(
+            'active-thumb',
+            idx === currentIndex
+          );
+
+        });
+
+
+        if (counter) {
+
+          counter.textContent =
+            `${currentIndex + 1} / ${items.length}`;
+
         }
 
-      });
+      }
+
+
+      if (prevBtn && nextBtn) {
+
+        prevBtn.addEventListener(
+          'click',
+          () => {
+
+            const newIndex =
+              (currentIndex - 1 + items.length) %
+              items.length;
+
+            showItem(newIndex);
+
+          }
+        );
+
+
+        nextBtn.addEventListener(
+          'click',
+          () => {
+
+            const newIndex =
+              (currentIndex + 1) %
+              items.length;
+
+            showItem(newIndex);
+
+          }
+        );
+
+      }
 
 
       thumbnails.forEach((thumb, idx) => {
 
-        thumb.classList.toggle(
-          'active-thumb',
-          idx === currentIndex
+        thumb.addEventListener(
+          'click',
+          () => {
+
+            showItem(idx);
+
+          }
         );
-
-      });
-
-
-      if (counter) {
-
-        counter.textContent =
-          `${currentIndex + 1} / ${items.length}`;
-
-      }
-
-    }
-
-
-    if (prevBtn && nextBtn) {
-
-      prevBtn.addEventListener('click', () => {
-
-        let newIndex =
-          (currentIndex - 1 + items.length) %
-          items.length;
-
-        showItem(newIndex);
-
-      });
-
-
-      nextBtn.addEventListener('click', () => {
-
-        let newIndex =
-          (currentIndex + 1) %
-          items.length;
-
-        showItem(newIndex);
-
-      });
-
-    }
-
-
-    thumbnails.forEach((thumb, idx) => {
-
-      thumb.addEventListener('click', () => {
-
-        showItem(idx);
 
       });
 
     });
 
-  });
 
 
-  // Lightbox functionality
+  /* =========================
+     LIGHTBOX
+     ========================= */
 
   const modal =
     document.getElementById('lightbox-modal');
@@ -1494,78 +2060,111 @@ img.project-image {
     document.getElementById('lightbox-close');
 
 
-  document.querySelectorAll('.project-image')
+
+  /* IMAGE LIGHTBOX */
+
+  document
+    .querySelectorAll('.project-image')
     .forEach(img => {
 
-      img.addEventListener('click', () => {
+      img.addEventListener(
+        'click',
+        () => {
 
-        modalBody.innerHTML =
-          `<img src="${img.src}" alt="${img.alt}">`;
+          modalBody.innerHTML =
+            `<img src="${img.src}" alt="${img.alt}">`;
 
-        modal.style.display = 'flex';
+          modal.style.display = 'flex';
 
-      });
+        }
+      );
+
+    });
+
+
+
+  /* VIDEO LIGHTBOX */
+
+  document
+    .querySelectorAll('.project-video')
+    .forEach(video => {
+
+      video.addEventListener(
+        'click',
+        (e) => {
+
+          /*
+           * Only open the lightbox when clicking
+           * the video itself, not its controls.
+           */
+
+          if (e.target !== video) {
+            return;
+          }
+
+
+          const sourceSrc =
+            video.querySelector('source')
+              ? video.querySelector('source').src
+              : video.src;
+
+
+          modalBody.innerHTML =
+            `<video src="${sourceSrc}" controls autoplay></video>`;
+
+
+          modal.style.display = 'flex';
+
+        }
+      );
 
     });
 
 
-  document.querySelectorAll('.project-video')
-  .forEach(video => {
 
-    video.addEventListener('click', (e) => {
+  /* CLOSE LIGHTBOX */
 
-      // Don't open the lightbox when interacting with video controls
-      if (e.target !== video) {
-        return;
-      }
-
-      const sourceSrc =
-        video.querySelector('source')
-          ? video.querySelector('source').src
-          : video.src;
-
-      modalBody.innerHTML =
-        `<video src="${sourceSrc}" controls autoplay></video>`;
-
-      modal.style.display = 'flex';
-
-    });
-
-  });
-
-
-  closeBtn.addEventListener('click', () => {
+  function closeLightbox() {
 
     modal.style.display = 'none';
+
 
     const modalVideo =
       modalBody.querySelector('video');
 
+
     if (modalVideo) {
+
       modalVideo.pause();
+
     }
 
-  });
+  }
 
 
-  modal.addEventListener('click', (e) => {
+  closeBtn.addEventListener(
+    'click',
+    closeLightbox
+  );
 
-    if (e.target === modal) {
 
-      modal.style.display = 'none';
 
-      const modalVideo =
-        modalBody.querySelector('video');
+  modal.addEventListener(
+    'click',
+    (e) => {
 
-      if (modalVideo) {
-        modalVideo.pause();
+      if (e.target === modal) {
+
+        closeLightbox();
+
       }
 
     }
+  );
 
-  });
 
 </script>
+
 
 </body>
 </html>
