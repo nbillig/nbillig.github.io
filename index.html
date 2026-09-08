@@ -284,120 +284,144 @@
     }
 
     /* Carousel & Thumbnails */
-    .image-carousel {
-      position: relative;
-      margin-top: 18px;
-      max-width: 100%;
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      padding: 15px;
-      border-radius: 6px;
-      text-align: center;
-    }
+.image-carousel {
+  position: relative;
+  margin-top: 18px;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  overflow: hidden;
+}
 
-    .carousel-track {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 380px;
-    }
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  overflow: hidden;
+}
 
-    .project-image,
-    .project-video {
-      max-width: 100%;
-      max-height: 600px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      display: none;
-      margin: 0 auto;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+.project-image,
+.project-video {
+  display: none;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-    .project-image.active,
-    .project-video.active {
-      display: block;
-    }
+.project-image.active,
+.project-video.active {
+  display: block;
+}
 
-    .project-image:hover,
-    .project-video:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transform: scale(1.01);
-    }
+/* Keep videos contained within the carousel */
+video.project-video {
+  width: 100%;
+  max-width: 850px;
+  max-height: 600px;
+  height: auto;
+  object-fit: contain;
+  background: #000;
+}
 
-    .carousel-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 12px;
-      margin-bottom: 12px;
-    }
+/* Keep images from becoming too large */
+img.project-image {
+  max-width: 100%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
 
-    .carousel-btn {
-      background: #475569;
-      color: #fff;
-      border: none;
-      padding: 6px 12px;
-      cursor: pointer;
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-      border-radius: 3px;
-      transition: background 0.2s ease;
-    }
+.project-image:hover,
+.project-video:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transform: scale(1.01);
+}
 
-    .carousel-btn:hover {
-      background: #334155;
-    }
+.carousel-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
 
-    .carousel-counter {
-      font-size: 13px;
-      color: #64748b;
-    }
+.carousel-btn {
+  background: #475569;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
 
-    .thumbnail-strip {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      justify-content: center;
-      padding-top: 8px;
-      border-top: 1px solid #cbd5e1;
-    }
+.carousel-btn:hover {
+  background: #334155;
+}
 
-    .thumb-img,
-    .thumb-video-placeholder {
-      width: 55px;
-      height: 55px;
-      object-fit: cover;
-      cursor: pointer;
-      border: 2px solid transparent;
-      border-radius: 3px;
-      opacity: 0.6;
-      transition: opacity 0.2s ease, border-color 0.2s ease;
-    }
+.carousel-counter {
+  font-size: 13px;
+  color: #64748b;
+}
 
-    .thumb-video-placeholder {
-      background: #475569;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
+.thumbnail-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  justify-content: center;
+  padding-top: 8px;
+  border-top: 1px solid #cbd5e1;
+}
 
-    .thumb-img:hover,
-    .thumb-video-placeholder:hover {
-      opacity: 0.9;
-    }
+.thumb-img,
+.thumb-video-placeholder {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
 
-    .thumb-img.active-thumb,
-    .thumb-video-placeholder.active-thumb {
-      border-color: #475569;
-      opacity: 1;
-    }
+.thumb-video-placeholder {
+  background: #475569;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.thumb-img:hover,
+.thumb-video-placeholder:hover {
+  opacity: 0.9;
+}
+
+.thumb-img.active-thumb,
+.thumb-video-placeholder.active-thumb {
+  border-color: #475569;
+  opacity: 1;
+}
 
     /* Footer */
     footer {
@@ -710,114 +734,140 @@
 
       <div class="image-carousel">
 
-        <div class="carousel-track">
-          <div class="project-video">
-              <video controls muted preload="metadata">
-                  <source src="Images/GripperVideo.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-              </video>
-          </div>
-          <img class="project-image"
-               src="Images/GripperPoster.jpg"
-               alt="Gripper project poster">
+  <div class="carousel-track">
 
-          <img class="project-image active"
-               src="Images/SingleFingerAssembly.png"
-               alt="CAD model of a single finger of the adaptive gripper">
+    <!-- 1. Gripper Poster -->
+    <video class="project-video"
+           controls
+           muted
+           loop
+           preload="metadata">
+      <source src="Images/GripperVideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
 
-          <img class="project-image"
-               src="Images/D24Schem.png"
-               alt="Power supply schematic">
+    <!-- 2. Gripper Video -->
+    <img class="project-image active"
+         src="Images/GripperPoster.jpg"
+         alt="Gripper project poster">
 
-          <img class="project-image"
-               src="Images/DRVschem.png"
-               alt="Motor driver schematic">
+    <!-- 3. Single Finger Assembly -->
+    <img class="project-image"
+         src="Images/SingleFingerAssembly.png"
+         alt="CAD model of a single finger of the adaptive gripper">
 
-          <img class="project-image"
-               src="Images/HXSchem.png"
-               alt="Load cell schematic">
+    <!-- 4. Power Supply Schematic -->
+    <img class="project-image"
+         src="Images/D24Schem.png"
+         alt="Power supply schematic">
 
-          <img class="project-image"
-               src="Images/MuxSchem.png"
-               alt="Sensor multiplexer schematic">
+    <!-- 5. Motor Driver Schematic -->
+    <img class="project-image"
+         src="Images/DRVschem.png"
+         alt="Motor driver schematic">
 
-          <img class="project-image"
-               src="Images/mainSchem.png"
-               alt="Main gripper schematic">
+    <!-- 6. Load Cell Schematic -->
+    <img class="project-image"
+         src="Images/HXSchem.png"
+         alt="Load cell schematic">
 
-          <img class="project-image"
-               src="Images/PCB.png"
-               alt="Gripper PCB">
+    <!-- 7. Sensor Multiplexer Schematic -->
+    <img class="project-image"
+         src="Images/MuxSchem.png"
+         alt="Sensor multiplexer schematic">
 
+    <!-- 8. Main Gripper Schematic -->
+    <img class="project-image"
+         src="Images/mainSchem.png"
+         alt="Main gripper schematic">
 
-        </div>
+    <!-- 9. Gripper PCB -->
+    <img class="project-image"
+         src="Images/PCB.png"
+         alt="Gripper PCB">
 
-
-        <div class="carousel-nav">
-
-          <button class="carousel-btn prev-btn">
-            &#10094; Prev
-          </button>
-
-          <span class="carousel-counter">
-            1 / 8
-          </span>
-
-          <button class="carousel-btn next-btn">
-            Next &#10095;
-          </button>
-
-        </div>
+  </div>
 
 
-        <div class="thumbnail-strip">
+  <div class="carousel-nav">
 
-          <img class="thumb-img"
-               src="Images/GripperPoster.jpg"
-               alt="Thumbnail 8"
-               data-index="1">
-          <img class="thumb-img active-thumb"
-               src="Images/SingleFingerAssembly.png"
-               alt="Thumbnail 1"
-               data-index="2">
+    <button class="carousel-btn prev-btn">
+      &#10094; Prev
+    </button>
 
-          <img class="thumb-img"
-               src="Images/D24Schem.png"
-               alt="Thumbnail 2"
-               data-index="3">
+    <span class="carousel-counter">
+      1 / 9
+    </span>
 
-          <img class="thumb-img"
-               src="Images/DRVschem.png"
-               alt="Thumbnail 3"
-               data-index="4">
+    <button class="carousel-btn next-btn">
+      Next &#10095;
+    </button>
 
-          <img class="thumb-img"
-               src="Images/HXSchem.png"
-               alt="Thumbnail 4"
-               data-index="5">
-
-          <img class="thumb-img"
-               src="Images/MuxSchem.png"
-               alt="Thumbnail 5"
-               data-index="6">
-
-          <img class="thumb-img"
-               src="Images/mainSchem.png"
-               alt="Thumbnail 6"
-               data-index="7">
-
-          <img class="thumb-img"
-               src="Images/PCB.png"
-               alt="Thumbnail 7"
-               data-index="8">
+  </div>
 
 
+  <div class="thumbnail-strip">
 
-        </div>
-
-      </div>
-
+    <!-- 1 -->
+    <div class="thumb-video-placeholder"
+         data-index="1">
+      Video
     </div>
+    
+
+    <!-- 2 -->
+    <img class="thumb-img active-thumb"
+         src="Images/GripperPoster.jpg"
+         alt="Gripper poster thumbnail"
+         data-index="0">
+
+
+    <!-- 3 -->
+    <img class="thumb-img"
+         src="Images/SingleFingerAssembly.png"
+         alt="Single finger assembly thumbnail"
+         data-index="2">
+
+    <!-- 4 -->
+    <img class="thumb-img"
+         src="Images/D24Schem.png"
+         alt="Power supply schematic thumbnail"
+         data-index="3">
+
+    <!-- 5 -->
+    <img class="thumb-img"
+         src="Images/DRVschem.png"
+         alt="Motor driver schematic thumbnail"
+         data-index="4">
+
+    <!-- 6 -->
+    <img class="thumb-img"
+         src="Images/HXSchem.png"
+         alt="Load cell schematic thumbnail"
+         data-index="5">
+
+    <!-- 7 -->
+    <img class="thumb-img"
+         src="Images/MuxSchem.png"
+         alt="Sensor multiplexer schematic thumbnail"
+         data-index="6">
+
+    <!-- 8 -->
+    <img class="thumb-img"
+         src="Images/mainSchem.png"
+         alt="Main gripper schematic thumbnail"
+         data-index="7">
+
+    <!-- 9 -->
+    <img class="thumb-img"
+         src="Images/PCB.png"
+         alt="Gripper PCB thumbnail"
+         data-index="8">
+
+  </div>
+
+</div>
 
 
     <!-- HALL EFFECT -->
@@ -1463,23 +1513,28 @@
 
 
   document.querySelectorAll('.project-video')
-    .forEach(video => {
+  .forEach(video => {
 
-      video.addEventListener('click', () => {
+    video.addEventListener('click', (e) => {
 
-        const sourceSrc =
-          video.querySelector('source')
-            ? video.querySelector('source').src
-            : video.src;
+      // Don't open the lightbox when interacting with video controls
+      if (e.target !== video) {
+        return;
+      }
 
-        modalBody.innerHTML =
-          `<video src="${sourceSrc}" controls autoplay></video>`;
+      const sourceSrc =
+        video.querySelector('source')
+          ? video.querySelector('source').src
+          : video.src;
 
-        modal.style.display = 'flex';
+      modalBody.innerHTML =
+        `<video src="${sourceSrc}" controls autoplay></video>`;
 
-      });
+      modal.style.display = 'flex';
 
     });
+
+  });
 
 
   closeBtn.addEventListener('click', () => {
