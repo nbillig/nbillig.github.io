@@ -861,9 +861,9 @@
       </p>
 
       <p>
-        My research focuses on a tendon-driven robotic gripper for USSF-sponsored work. I've 
-        developed the mechanical design, custom electronics, embedded software, and sensing,
-        and revised the prototype through testing.
+        My research focuses on a tendon-driven robotic gripper for USSF-sponsored work. I've
+        developed the mechanical design, sensor integration, embedded software, and control system,
+        taking the project from initial concepts through prototype development and testing.
       </p>
 
       <p>
@@ -1057,7 +1057,6 @@
 <h4>Custom Controller PCB</h4>
 <p>Designed a four-layer PCB in Altium CircuitMaker for an ESP32-based controller with motor drivers, Hall-effect sensor interfaces, encoders, and load-cell amplifiers. Completed schematic design, board layout, and submission for manufacturing.</p>
 <p>Added thermal vias for chip heat dissipation and kept 24 V power traces separate from sensitive load-cell amplifier and Hall-effect sensor signal traces to reduce the risk of electrical interference.</p>
-<p>Current status: submitted for manufacturing. Board bring-up and testing are the next steps.</p>
 <div class="image-carousel">
 <div class="carousel-track">
 <img class="project-image active" src="Images/JCLPCB.png" alt="Four-layer controller PCB layout prepared for manufacturing." data-caption="Four-layer controller PCB layout prepared for manufacturing." loading="lazy">
@@ -1071,10 +1070,10 @@
         <img class="project-image" src="Images/HXSchem.png" alt="Load-cell amplifier schematic for tendon tension measurement." data-caption="Load-cell amplifier schematic for tendon tension measurement." loading="lazy">
 
 
-        <img class="project-image" src="Images/MuxSchem.png" alt="Multiplexer schematic for Hall-effect sensor acquisition." data-caption="Multiplexer schematic for Hall-effect sensor acquisition." loading="lazy">
+        <img class="project-image" src="Images/MuxSchem.png" alt="Multiplexer schematic for Hall-effect sensor acquisition." data-caption="Multiplexer schematic for Hall-effect sensor reading." loading="lazy">
 
 
-        <img class="project-image" src="Images/mainSchem.png" alt="Main controller schematic showing electrical interfaces." data-caption="Main controller schematic showing electrical interfaces." loading="lazy">
+        <img class="project-image" src="Images/mainSchem.png" alt="Main controller schematic showing electrical interfaces." data-caption="Main controller schematic." loading="lazy">
 
 
         </div>
@@ -1203,7 +1202,7 @@
       Multi-Agent Continuum Arm Q-Learning
     </h3>
 
-    <p>Built a multi-agent Q-learning simulation in CoppeliaSim to study coordinated control of a continuum arm. Implemented discrete states and actions and compared different agent configurations. The animations show behavior at different stages of training; they illustrate the learned motion rather than provide a quantitative performance comparison.</p>
+    <p>Built a multi-agent Q-learning simulation in CoppeliaSim to study coordinated control of a continuum arm. Implemented discrete states and actions and compared different agent configurations. The animations show behavior at different stages of training.</p>
 
     <div class="tags">
       Python · Q-Learning · Reinforcement Learning · Robotics
